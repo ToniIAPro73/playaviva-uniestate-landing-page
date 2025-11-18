@@ -2,21 +2,18 @@ import * as os from "os";
 import * as path from "path";
 
 /**
- * Detecta automáticamente la ruta correcta para almacenar PDFs según el entorno
- * - Vercel/Producción: /tmp/dossiers (directorio temporal en Linux)
- * - Local/Development: C:\Users\Usuario\Documents\Dossiers_Personalizados_PlayaViva (Windows)
+ * Detects where to store PDFs depending on environment.
+ * - Vercel/production: /tmp/dossiers
+ * - Local: <home>/Documents/Dossiers_Personalizados_PlayaViva
  */
 export const getLocalDossierDir = () => {
-  // Detectar si estamos en Vercel o entorno de producción
   const isVercel = Boolean(process.env.VERCEL);
   const isProduction = process.env.NODE_ENV === "production";
 
-  // En Vercel o producción, usar directorio temporal de Linux
   if (isVercel || isProduction) {
     return "/tmp/dossiers";
   }
 
-  // En desarrollo local (Windows), usar la carpeta de documentos del usuario
   const documentsDir = path.join(os.homedir(), "Documents");
   return path.join(documentsDir, "Dossiers_Personalizados_PlayaViva");
 };
@@ -32,7 +29,7 @@ export type ResolvedS3Config = {
 export type S3Region = {
   endpoint: string;
   region: string;
-  name: string; // Human-readable name for logging
+  name: string;
 };
 
 export const normalizeBucketName = (value?: string | null) => {
@@ -53,19 +50,21 @@ export const splitEndpoint = (rawEndpoint?: string, bucket?: string) => {
 
   try {
     const url = new URL(rawEndpoint);
-
     // Path-style endpoint e.g. https://s3.example.com/my-bucket
-    if (!bucket && url.pathname && url.pathname !== "/") {
-      const [firstSegment] = url.pathname.replace(/^\/+/, "").split("/");
-      if (firstSegment) {
+    if (!bucket) {
+      const pathBucket =
+        url.pathname && url.pathname !== "/"
+          ? url.pathname.replace(/^\/+/, "").split("/")[0]
+          : undefined;
+
+      if (pathBucket) {
         return {
           endpoint: `${url.protocol}//${url.host}`,
-          bucket: firstSegment,
+          bucket: pathBucket,
         };
       }
     }
 
-    // Virtual-hosted-style endpoint e.g. https://my-bucket.s3.amazonaws.com
     if (!bucket) {
       const hostParts = url.hostname.split(".");
       if (hostParts.length > 3) {
@@ -91,55 +90,96 @@ export const splitEndpoint = (rawEndpoint?: string, bucket?: string) => {
   }
 };
 
+const isTruthyEnv = (value?: string | null) => {
+  if (!value) return false;
+  const normalized = value.trim().toLowerCase();
+  return normalized === "true" || normalized === "1" || normalized === "yes";
+};
+
 export const resolveS3Config = (): ResolvedS3Config => {
-  // ✅ FORZAR R2 SIEMPRE - IGNORAR CUALQUIER OTRA CONFIGURACIÓN
+  const rawEndpoint =
+    process.env.S3_Endpoint ??
+    process.env.S3_ENDPOINT ??
+    process.env.S3_ENDPOINT_URL ??
+    process.env.AWS_S3_ENDPOINT;
+  const rawBucket = normalizeBucketName(
+    process.env.S3_BUCKET_NAME ?? process.env.S3_BUCKET ?? null,
+  );
+  const region =
+    process.env.S3_Region_Code ??
+    process.env.S3_REGION_CODE ??
+    process.env.AWS_REGION ??
+    process.env.AWS_DEFAULT_REGION;
+  const accessKeyId =
+    process.env.S3_Access_Key_ID ??
+    process.env.S3_ACCESS_KEY_ID ??
+    process.env.AWS_ACCESS_KEY_ID;
+  const secretAccessKey =
+    process.env.S3_Secret_Access_Key ??
+    process.env.S3_SECRET_ACCESS_KEY ??
+    process.env.AWS_SECRET_ACCESS_KEY;
+
+  const { endpoint, bucket } = splitEndpoint(rawEndpoint, rawBucket);
+
   return {
-    endpoint:
-      "https://8356c3c60dba9459607901d4a6f93b3a.r2.cloudflarestorage.com",
-    bucket: "playa-viva-dossiers",
-    region: "auto",
-    accessKeyId: "57a411843155a9028467f9575faeb2d3",
-    secretAccessKey:
-      "d15b1bbad71eb90c89157cb7759034cd5652bfc1add1d7019937291a2541499e",
+    endpoint,
+    bucket,
+    region,
+    accessKeyId,
+    secretAccessKey,
   };
 };
 
-export const isS3Enabled = (config: ResolvedS3Config): boolean => {
-  // Check if essential S3 configuration is present
-  // We need at least: endpoint, bucket, and both access credentials
+export const isS3Enabled = (
+  config: ResolvedS3Config = resolveS3Config(),
+): boolean => {
+  if (!config) return false;
   return Boolean(
     config.endpoint &&
       config.bucket &&
       config.accessKeyId &&
-      config.secretAccessKey
+      config.secretAccessKey,
   );
 };
 
-export const shouldUseS3Storage = (config?: ResolvedS3Config) => {
-  // ✅ FORZAR TRUE - SIEMPRE USAR S3/R2
-  return true;
+export const shouldUseS3Storage = (
+  config: ResolvedS3Config = resolveS3Config(),
+) => {
+  if (!config) {
+    return false;
+  }
+
+  if (isTruthyEnv(process.env.DISABLE_S3_STORAGE)) {
+    return false;
+  }
+
+  if (isTruthyEnv(process.env.FORCE_S3_STORAGE)) {
+    return true;
+  }
+
+  if (!isS3Enabled(config)) {
+    return false;
+  }
+
+  return Boolean(process.env.VERCEL);
 };
 
-/**
- * ✅ FORZAR R2 - IGNORAR IDRIVE COMPLETAMENTE
- */
 export const getS3Regions = (): S3Region[] => {
+  const config = resolveS3Config();
+
+  if (!config.endpoint) {
+    return [];
+  }
+
   return [
     {
-      endpoint:
-        "https://8356c3c60dba9459607901d4a6f93b3a.r2.cloudflarestorage.com",
-      region: "auto",
-      name: "Cloudflare R2",
+      endpoint: config.endpoint,
+      region: config.region ?? "auto",
+      name: "Primary S3",
     },
   ];
 };
 
-/**
- * Returns available S3 regions configured for failover
- * Primary: Frankfurt (eu-west-4)
- * Fallback: Paris (eu-central-2)
- */
-// Esta función está obsoleta ahora, pero la dejamos por compatibilidad
 export const getS3RegionsFallback = (): S3Region[] => {
   return [
     {
