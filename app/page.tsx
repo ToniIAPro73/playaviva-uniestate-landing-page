@@ -55,6 +55,7 @@ declare global {
         hidefooter?: string;
         hidelogo?: string;
         strings?: string;
+        language?: "es" | "en";
         theme?: string;
       };
     }

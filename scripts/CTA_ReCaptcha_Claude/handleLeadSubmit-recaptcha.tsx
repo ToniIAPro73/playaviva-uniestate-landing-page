@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * INSTRUCCIONES DE INTEGRACIÓN:
  * 
@@ -128,3 +129,5 @@ const handleLeadSubmit = async (event: FormEvent<HTMLFormElement>) => {
     setIsSubmitting(false);
   }
 };
+
+
