@@ -92,36 +92,15 @@ export const splitEndpoint = (rawEndpoint?: string, bucket?: string) => {
 };
 
 export const resolveS3Config = (): ResolvedS3Config => {
-  // PRIORIZAR R2 si está configurado
-  if (process.env.R2_ACCOUNT_ID && process.env.R2_BUCKET_NAME) {
-    return {
-      endpoint: `${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
-      bucket: process.env.R2_BUCKET_NAME,
-      region: "auto",
-      accessKeyId: process.env.R2_ACCESS_KEY_ID,
-      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
-    };
-  }
-
-  // Fallback a configuración S3 anterior (iDrive)
-  const rawEndpoint = process.env.S3_Endpoint ?? process.env.S3_ENDPOINT;
-  const bucketEnv =
-    process.env.S3_Bucket ??
-    process.env.S3_BUCKET ??
-    process.env.S3_BUCKET_NAME;
-
-  const { endpoint, bucket } = splitEndpoint(
-    rawEndpoint,
-    normalizeBucketName(bucketEnv)
-  );
-
+  // ✅ FORZAR R2 SIEMPRE - IGNORAR CUALQUIER OTRA CONFIGURACIÓN
   return {
-    endpoint,
-    bucket,
-    region: process.env.S3_Region_Code ?? process.env.S3_REGION_CODE,
-    accessKeyId: process.env.S3_Access_Key_ID ?? process.env.S3_ACCESS_KEY_ID,
+    endpoint:
+      "https://8356c3c60dba9459607901d4a6f93b3a.r2.cloudflarestorage.com",
+    bucket: "playa-viva-dossiers",
+    region: "auto",
+    accessKeyId: "57a411843155a9028467f9575faeb2d3",
     secretAccessKey:
-      process.env.S3_Secret_Access_Key ?? process.env.S3_SECRET_ACCESS_KEY,
+      "d15b1bbad71eb90c89157cb7759034cd5652bfc1add1d7019937291a2541499e",
   };
 };
 
@@ -137,25 +116,22 @@ export const isS3Enabled = (config: ResolvedS3Config): boolean => {
 };
 
 export const shouldUseS3Storage = (config?: ResolvedS3Config) => {
-  const resolved = config ?? resolveS3Config();
-  const disabled =
-    (process.env.DISABLE_S3_STORAGE ?? "").toLowerCase() === "true";
-  if (disabled) return false;
+  // ✅ FORZAR TRUE - SIEMPRE USAR S3/R2
+  return true;
+};
 
-  const enabled = (process.env.FORCE_S3_STORAGE ?? "").toLowerCase() === "true";
-  const hasConfig = isS3Enabled(resolved);
-  if (enabled) return hasConfig;
-
-  const runningOnVercel = Boolean(process.env.VERCEL);
-  const nodeEnv = (process.env.NODE_ENV ?? "").toLowerCase();
-  const runningInProduction = nodeEnv === "production";
-
-  if (!hasConfig) return false;
-  if (runningOnVercel || runningInProduction) {
-    return true;
-  }
-
-  return false;
+/**
+ * ✅ FORZAR R2 - IGNORAR IDRIVE COMPLETAMENTE
+ */
+export const getS3Regions = (): S3Region[] => {
+  return [
+    {
+      endpoint:
+        "https://8356c3c60dba9459607901d4a6f93b3a.r2.cloudflarestorage.com",
+      region: "auto",
+      name: "Cloudflare R2",
+    },
+  ];
 };
 
 /**
@@ -163,23 +139,8 @@ export const shouldUseS3Storage = (config?: ResolvedS3Config) => {
  * Primary: Frankfurt (eu-west-4)
  * Fallback: Paris (eu-central-2)
  */
-/**
- * Returns R2 regions (solo Cloudflare R2)
- */
-
-export const getS3Regions = (): S3Region[] => {
-  // Si R2 está configurado, usa SOLO Cloudflare R2 (un solo endpoint)
-  if (process.env.R2_ACCOUNT_ID) {
-    return [
-      {
-        endpoint: `${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
-        region: "auto",
-        name: "Cloudflare R2",
-      },
-    ];
-  }
-
-  // Fallback a iDrive E2 (tu configuración anterior)
+// Esta función está obsoleta ahora, pero la dejamos por compatibilidad
+export const getS3RegionsFallback = (): S3Region[] => {
   return [
     {
       endpoint: "s3.eu-west-4.idrivee2.com",
