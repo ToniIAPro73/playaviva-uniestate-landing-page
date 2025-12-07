@@ -57,6 +57,10 @@ export default function RootLayout({
   return (
       <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Preconnect to critical resources for performance */}
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossOrigin="anonymous" />
+        <link rel="prefetch" href="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js" as="script" />
         <meta name="google" content="notranslate" />
         <meta
           name="description"

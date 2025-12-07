@@ -11,17 +11,22 @@ const nextConfig = {
   },
   productionBrowserSourceMaps: false,
   // Optimizations for modern browsers - Turbopack (Next.js 16 default)
-  turbopack: {
-    resolveAlias: {
-      // Optimize module resolution
-    }
-  },
   experimental: {
-    optimizePackageImports: ['lucide-react', 'zod'],
+    optimizePackageImports: ['lucide-react', 'zod', 'react-hook-form'],
   },
   // Headers para mejorar bfcache, cache policy y performance
   async headers() {
     return [
+      // External CDN resources with long cache
+      {
+        source: '/(.*)\\.min\\.(js|css)$',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      },
       // Static assets (images, fonts) - Cache for 1 year
       {
         source: '/assets/:path*',
