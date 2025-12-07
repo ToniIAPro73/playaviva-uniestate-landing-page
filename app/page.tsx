@@ -1826,6 +1826,7 @@ const orchestrateLeadAutomation = async (
             <div className="shrink-0">
               <button
                 onClick={() => scrollToSection("uniestate")}
+                aria-label={language === "es" ? "Ir a Uniestate" : "Go to Uniestate"}
                 className="group relative text-brown-dark text-base md:text-lg font-bold tracking-tight transition-all duration-300 hover:text-gold-warm py-2 px-3 rounded-lg"
                 style={{
                   fontFamily: "system-ui, -apple-system, sans-serif",
@@ -1843,48 +1844,56 @@ const orchestrateLeadAutomation = async (
             <div className="hidden md:flex items-center space-x-1 flex-1 justify-center">
               <button
                 onClick={() => scrollToSection("wynn-effect")}
+                aria-label={t.menu.wynnEffect}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.wynnEffect}
               </button>
               <button
                 onClick={() => scrollToSection("investment")}
+                aria-label={t.menu.investment}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.investment}
               </button>
               <button
                 onClick={() => scrollToSection("features")}
+                aria-label={t.menu.features}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.features}
               </button>
               <button
                 onClick={() => scrollToSection("gallery")}
+                aria-label={t.menu.gallery}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.gallery}
               </button>
               <button
                 onClick={() => scrollToSection("apartments")}
+                aria-label={t.menu.apartments}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.apartments}
               </button>
               <button
                 onClick={() => scrollToSection("location")}
+                aria-label={t.menu.location}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.location}
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
+                aria-label={t.menu.faq}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.faq}
               </button>
               <button
                 onClick={() => scrollToSection("dossier")}
+                aria-label={t.menu.dossier}
                 className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
               >
                 {t.menu.dossier}
@@ -1940,48 +1949,56 @@ const orchestrateLeadAutomation = async (
               <div className="flex flex-col space-y-3">
                 <button
                   onClick={() => scrollToSection("wynn-effect")}
+                  aria-label={t.menu.wynnEffect}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.wynnEffect}
                 </button>
                 <button
                   onClick={() => scrollToSection("investment")}
+                  aria-label={t.menu.investment}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.investment}
                 </button>
                 <button
                   onClick={() => scrollToSection("features")}
+                  aria-label={t.menu.features}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.features}
                 </button>
                 <button
                   onClick={() => scrollToSection("gallery")}
+                  aria-label={t.menu.gallery}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.gallery}
                 </button>
                 <button
                   onClick={() => scrollToSection("apartments")}
+                  aria-label={t.menu.apartments}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.apartments}
                 </button>
                 <button
                   onClick={() => scrollToSection("location")}
+                  aria-label={t.menu.location}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.location}
                 </button>
                 <button
                   onClick={() => scrollToSection("faq")}
+                  aria-label={t.menu.faq}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.faq}
                 </button>
                 <button
                   onClick={() => scrollToSection("dossier")}
+                  aria-label={t.menu.dossier}
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.dossier}
