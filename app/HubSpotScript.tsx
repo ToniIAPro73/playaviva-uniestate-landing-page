@@ -7,7 +7,7 @@ export default function HubSpotScript() {
     <Script
       id="hubspot-script"
       src="//js-eu1.hs-scripts.com/147219365.js"
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       async
       defer
     />

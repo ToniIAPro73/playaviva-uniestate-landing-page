@@ -10,10 +10,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   productionBrowserSourceMaps: false,
-  // Optimizations for modern browsers
-  swcMinify: true,
+  // Optimizations for modern browsers - Turbopack (Next.js 16 default)
+  turbopack: {
+    resolveAlias: {
+      // Optimize module resolution
+    }
+  },
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['lucide-react', 'zod'],
   },
   // Headers para mejorar bfcache, cache policy y performance
   async headers() {
