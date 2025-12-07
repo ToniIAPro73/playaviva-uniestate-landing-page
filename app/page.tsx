@@ -208,12 +208,25 @@ export default function PlayaVivaLanding() {
     fitHeroToViewport();
   }, []);
   useEffect(() => {
-    const onResize = () => fitHeroToViewport();
-    window.addEventListener("resize", onResize);
-    window.addEventListener("orientationchange", onResize);
+    let resizeRaf: number | null = null;
+
+    const scheduleResize = () => {
+      if (resizeRaf !== null) return;
+      resizeRaf = window.requestAnimationFrame(() => {
+        resizeRaf = null;
+        fitHeroToViewport();
+      });
+    };
+
+    window.addEventListener("resize", scheduleResize, { passive: true });
+    window.addEventListener("orientationchange", scheduleResize);
+
     return () => {
-      window.removeEventListener("resize", onResize);
-      window.removeEventListener("orientationchange", onResize);
+      if (resizeRaf !== null) {
+        window.cancelAnimationFrame(resizeRaf);
+      }
+      window.removeEventListener("resize", scheduleResize);
+      window.removeEventListener("orientationchange", scheduleResize);
     };
   }, []);
 
@@ -225,7 +238,13 @@ export default function PlayaVivaLanding() {
   }, [language, validationMessage]);
 
   useEffect(() => {
-    const handleScroll = () => {
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      return;
+    }
+
+    let scrollRaf: number | null = null;
+
+    const updateScrollState = () => {
       const currentScroll = window.scrollY;
 
       // Calculate scroll progress for hero section (0 to 1)
@@ -239,9 +258,9 @@ export default function PlayaVivaLanding() {
       // Determine scroll position for navigation buttons
       const scrollHeight = document.documentElement.scrollHeight;
       const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = currentScroll;
       const scrollableHeight = scrollHeight - clientHeight;
-      const scrollPercentage = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+      const scrollPercentage =
+        scrollableHeight > 0 ? (currentScroll / scrollableHeight) * 100 : 0;
 
       if (scrollPercentage < 15) {
         setScrollPosition("top");
@@ -255,14 +274,13 @@ export default function PlayaVivaLanding() {
         ref: React.RefObject<HTMLDivElement | null>,
         sectionKey: keyof typeof visibleSections
       ) => {
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-          setVisibleSections((prev) => ({
-            ...prev,
-            [sectionKey]: isVisible || currentScroll > 300,
-          }));
-        }
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        setVisibleSections((prev) => ({
+          ...prev,
+          [sectionKey]: isVisible || currentScroll > 300,
+        }));
       };
       checkSectionVisibility(wynnEffectRef, "wynnEffect");
       checkSectionVisibility(investmentRef, "investment");
@@ -274,9 +292,23 @@ export default function PlayaVivaLanding() {
       checkSectionVisibility(faqRef, "faq");
       checkSectionVisibility(leadFormRef, "leadForm");
       checkSectionVisibility(footerRef, "footer");
+      scrollRaf = null;
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const onScroll = () => {
+      if (scrollRaf !== null) return;
+      scrollRaf = window.requestAnimationFrame(updateScrollState);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateScrollState();
+
+    return () => {
+      if (scrollRaf !== null) {
+        window.cancelAnimationFrame(scrollRaf);
+      }
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -1352,6 +1384,10 @@ export default function PlayaVivaLanding() {
     language === "es"
       ? { open: "Abrir menú de navegación", close: "Cerrar menú de navegación" }
       : { open: "Open navigation menu", close: "Close navigation menu" };
+  const languageToggleAriaLabel =
+    language === "es"
+      ? "ES | EN — Cambia el idioma a inglés"
+      : "ES | EN — Switch language to Spanish";
 
   const apartmentConfigs = {
     studio: {
@@ -1766,12 +1802,7 @@ const orchestrateLeadAutomation = async (
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Script
-        src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js"
-        type="module"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
+      <Script src="/vendor/altcha.js" type="module" strategy="afterInteractive" />
       {hasLoadedHubSpotScript && <HubSpotScript />}
       {/* Navigation and Language Toggle - Fixed Bottom Right */}
       <div className="fixed bottom-6 right-6 z-100 flex flex-col items-end gap-3">
@@ -1806,7 +1837,7 @@ const orchestrateLeadAutomation = async (
           size="sm"
           onClick={() => setLanguage(language === "es" ? "en" : "es")}
           className="bg-white/95 backdrop-blur-sm border-brown-dark/20 hover:bg-cream-light text-brown-dark shadow-lg rounded-full px-4 py-2"
-          aria-label={language === "es" ? "Switch to English" : "Cambiar a Español"}
+          aria-label={languageToggleAriaLabel}
         >
           <span className={language === "es" ? "font-bold" : "opacity-60"}>ES</span>
           <span className="mx-2 text-brown-dark/40">|</span>
