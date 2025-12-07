@@ -1423,7 +1423,7 @@ export default function PlayaVivaLanding() {
   };
 
   const statCardBaseClasses =
-    "rounded-2xl border border-gold-warm/30 p-4 shadow-sm bg-gradient-to-br from-[#fdf9f3] via-[#f7ede1] to-[#f1e2d3] text-brown-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:brightness-95";
+    "rounded-2xl border border-gold-warm/30 p-4 shadow-sm bg-linear-to-br from-[#fdf9f3] via-[#f7ede1] to-[#f1e2d3] text-brown-dark transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:brightness-95";
 
   const apartmentCopy = t.apartments.tabs[activeApartment];
   const activeApartmentConfig = apartmentConfigs[activeApartment];
@@ -1782,7 +1782,7 @@ const orchestrateLeadAutomation = async (
             <button
               onClick={scrollToTop}
               aria-label={language === "es" ? "Ir al inicio" : "Go to top"}
-              className="group w-12 h-12 rounded-full bg-gradient-to-br from-brown-dark via-taupe-medium to-brown-dark border-2 border-gold-warm/30 hover:border-gold-warm/60 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(162,144,96,0.4)] transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95"
+              className="group w-12 h-12 rounded-full bg-linear-to-br from-brown-dark via-taupe-medium to-brown-dark border-2 border-gold-warm/30 hover:border-gold-warm/60 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(162,144,96,0.4)] transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95"
             >
               <ChevronUp className="w-6 h-6 text-gold-warm group-hover:text-white transition-colors duration-300" strokeWidth={3} />
             </button>
@@ -1793,7 +1793,7 @@ const orchestrateLeadAutomation = async (
             <button
               onClick={scrollToBottom}
               aria-label={language === "es" ? "Ir al final" : "Go to bottom"}
-              className="group w-12 h-12 rounded-full bg-gradient-to-br from-brown-dark via-taupe-medium to-brown-dark border-2 border-gold-warm/30 hover:border-gold-warm/60 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(162,144,96,0.4)] transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95"
+              className="group w-12 h-12 rounded-full bg-linear-to-br from-brown-dark via-taupe-medium to-brown-dark border-2 border-gold-warm/30 hover:border-gold-warm/60 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(162,144,96,0.4)] transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95"
             >
               <ChevronDown className="w-6 h-6 text-gold-warm group-hover:text-white transition-colors duration-300" strokeWidth={3} />
             </button>
@@ -1835,7 +1835,7 @@ const orchestrateLeadAutomation = async (
               >
                 <span className="relative">
                   UNIESTATE
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-gold-warm via-[#8B7355] to-transparent group-hover:w-full transition-all duration-500 ease-out" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-gold-warm via-[#8B7355] to-transparent group-hover:w-full transition-all duration-500 ease-out" />
                 </span>
               </button>
             </div>
@@ -2502,9 +2502,9 @@ const orchestrateLeadAutomation = async (
             <div className="max-w-4xl mx-auto mb-16">
               {/* 40% / 60% Display */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div className="group relative overflow-hidden text-center p-8 bg-gradient-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
+                <div className="group relative overflow-hidden text-center p-8 bg-linear-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500">
+                  <div className="absolute inset-0 bg-linear-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 rounded-full bg-linear-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
                   <div className="relative z-10">
                     <div className="text-6xl md:text-7xl font-light text-gold-warm mb-2 group-hover:text-[#8B7355] transition-colors duration-300">
                       {t.paymentPlan.mainPayment}
@@ -2518,9 +2518,9 @@ const orchestrateLeadAutomation = async (
                   </div>
                 </div>
 
-                <div className="group relative overflow-hidden text-center p-8 bg-gradient-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
+                <div className="group relative overflow-hidden text-center p-8 bg-linear-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500">
+                  <div className="absolute inset-0 bg-linear-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 rounded-full bg-linear-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
                   <div className="relative z-10">
                     <div className="text-6xl md:text-7xl font-light text-gold-warm mb-2 group-hover:text-[#8B7355] transition-colors duration-300">
                       {t.paymentPlan.postHandover}
@@ -2552,7 +2552,7 @@ const orchestrateLeadAutomation = async (
                 {t.paymentPlan.features.map((feature, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden flex items-start p-6 bg-gradient-to-r from-[#f5f1ea] to-[#ede8df] rounded-2xl border border-gold-warm/30 hover:border-gold-warm/60 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="group relative overflow-hidden flex items-start p-6 bg-linear-to-r from-[#f5f1ea] to-[#ede8df] rounded-2xl border border-gold-warm/30 hover:border-gold-warm/60 shadow-md hover:shadow-lg transition-all duration-300"
                     style={{
                       opacity: visibleSections.investment ? 1 : 0,
                       transform: visibleSections.investment
@@ -2563,7 +2563,7 @@ const orchestrateLeadAutomation = async (
                       }s`,
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-gold-warm/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-r from-gold-warm/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <CheckCircle2 className="h-6 w-6 text-gold-warm mr-4 shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-110" />
                     <span className="text-brown-dark text-left text-sm md:text-base relative z-10">
                       {feature}
@@ -2577,10 +2577,10 @@ const orchestrateLeadAutomation = async (
                 {t.paymentPlan.cards && t.paymentPlan.cards.map((card, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden p-8 bg-gradient-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500"
+                    className="group relative overflow-hidden p-8 bg-linear-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] rounded-3xl border-2 border-gold-warm/40 shadow-lg hover:shadow-2xl hover:border-gold-warm/60 transition-all duration-500"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute top-0 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-0.5 rounded-full bg-linear-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
                     <div className="relative z-10">
                       <p className="text-center text-brown-dark text-base md:text-lg font-medium leading-relaxed italic">
                         &ldquo;{card.text}&rdquo;
@@ -2826,7 +2826,7 @@ const orchestrateLeadAutomation = async (
                 className="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
                 sizes="(max-width: 1024px) 100vw, 75vw"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent p-6">
+              <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/60 via-black/10 to-transparent p-6">
                 <h4 className="text-white text-2xl font-semibold drop-shadow-lg">
                   {t.features.development.title}
                 </h4>
@@ -2910,7 +2910,7 @@ const orchestrateLeadAutomation = async (
                 className="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
                 sizes="(max-width: 1024px) 100vw, 75vw"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-8">
+              <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/30 to-transparent p-8">
                 <h4 className="text-white text-2xl md:text-3xl font-semibold mb-2 drop-shadow-lg">
                   {t.features.playaViva.tabs[activePlayaVivaTab].label}
                 </h4>
@@ -3361,13 +3361,13 @@ const orchestrateLeadAutomation = async (
               {t.location.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] p-6 md:p-8 border border-gold-warm/40 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-gold-warm/60"
+                  className="group relative overflow-hidden rounded-2xl bg-linear-to-br from-[#f5f1ea] via-[#ede8df] to-[#e8e3d8] p-6 md:p-8 border border-gold-warm/40 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-gold-warm/60"
                 >
                   {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-br from-gold-warm/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Top accent line */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
+                  <div className="absolute top-0 left-0 right-0 h-0.5 rounded-full bg-linear-to-r from-transparent via-gold-warm/50 to-transparent group-hover:via-gold-warm transition-all duration-500" />
 
                   {/* Content */}
                   <div className="relative z-10 text-center">
@@ -3380,7 +3380,7 @@ const orchestrateLeadAutomation = async (
                   </div>
 
                   {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[1px] rounded-full bg-gradient-to-r from-transparent via-gold-warm/30 to-transparent group-hover:via-gold-warm/60 transition-all duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-px rounded-full bg-linear-to-r from-transparent via-gold-warm/30 to-transparent group-hover:via-gold-warm/60 transition-all duration-500" />
                 </div>
               ))}
             </div>
