@@ -59,7 +59,7 @@ export default function RootLayout({
       <head>
         {/* Preconnect to critical resources for performance */}
         <link rel="preconnect" href="https://js-eu1.hs-scripts.com" crossOrigin="anonymous" />
-        <link rel="prefetch" href="/vendor/altcha.js" as="script" />
+        <link rel="preload" href="/vendor/altcha.js" as="script" crossOrigin="anonymous" />
         <meta name="google" content="notranslate" />
         <meta
           name="description"

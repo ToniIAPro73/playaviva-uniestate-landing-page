@@ -1802,7 +1802,12 @@ const orchestrateLeadAutomation = async (
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Script src="/vendor/altcha.js" type="module" strategy="afterInteractive" />
+      <Script
+        src="/vendor/altcha.js"
+        type="module"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+      />
       {hasLoadedHubSpotScript && <HubSpotScript />}
       {/* Navigation and Language Toggle - Fixed Bottom Right */}
       <div className="fixed bottom-6 right-6 z-100 flex flex-col items-end gap-3">
