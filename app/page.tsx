@@ -382,7 +382,6 @@ export default function PlayaVivaLanding() {
         apartments: "Apartamentos",
         location: "Ubicación",
         faq: "FAQ",
-        dossier: "Dossier",
       },
       wynnEffect: {
         title: "El Efecto Wynn",
@@ -889,7 +888,6 @@ export default function PlayaVivaLanding() {
         apartments: "Apartments",
         location: "Location",
         faq: "FAQ",
-        dossier: "Dossier",
       },
       wynnEffect: {
         title: "The Wynn Effect",
@@ -1927,13 +1925,6 @@ const orchestrateLeadAutomation = async (
               >
                 {t.menu.faq}
               </button>
-              <button
-                onClick={() => scrollToSection("dossier")}
-                aria-label={t.menu.dossier}
-                className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-xs md:text-sm font-normal px-2 md:px-3 py-2 hover:underline underline-offset-4 decoration-gold-warm hover:-translate-y-0.5"
-              >
-                {t.menu.dossier}
-              </button>
             </div>
 
             {/* Book Now Button - Desktop */}
@@ -2031,13 +2022,6 @@ const orchestrateLeadAutomation = async (
                   className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
                 >
                   {t.menu.faq}
-                </button>
-                <button
-                  onClick={() => scrollToSection("dossier")}
-                  aria-label={t.menu.dossier}
-                  className="text-brown-dark/70 hover:text-brown-dark transition-all duration-200 text-sm font-normal text-left py-2 hover:underline underline-offset-4 decoration-gold-warm"
-                >
-                  {t.menu.dossier}
                 </button>
                 <Button
                   onClick={() => scrollToSection("dossier")}
