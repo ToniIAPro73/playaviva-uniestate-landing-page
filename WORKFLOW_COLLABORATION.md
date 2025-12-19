@@ -1,51 +1,53 @@
 # 🤝 WORKFLOW COLABORATIVO - SESSION 2
 
-**Establecido**: Diciembre 19, 2025 - 05:40 AM CET
+**Establecido**: Diciembre 19, 2025 - 06:16 AM CET
+**Rama IA**: `perplexity/feat` (anteriormente `session-2/azure-bay-rebranding`)
 **Flujo**: Paralelo con validación y merge centralizado
 
 ---
 
-## 📐 ARQUITECTURA DEL WORKFLOW
+## 📋 ARQUITECTURA DEL WORKFLOW
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   TU MÁQUINA LOCAL                           │
-│                    (Branch: development)                     │
-│                                                               │
-│  ✅ Testing local                                            │
-│  ✅ Validación UX/UI                                         │
-│  ✅ QA funcional                                             │
-│  ✅ Aprobación final                                         │
+│                   TU MÁQUINA LOCAL                          │
+│                    (Branch: development)                    │
+│                                                             │
+│  ✅ Testing local                                          │
+│  ✅ Validación UX/UI                                       │
+│  ✅ QA funcional                                           │
+│  ✅ Aprobación final                                       │
 └─────────────────────────────────────────────────────────────┘
                           ⬆️ PULL REQUEST
-                    (yo promoveré cambios)
+                    (yo promoeveré cambios)
 ┌─────────────────────────────────────────────────────────────┐
-│              SESSION 2 BRANCH (Esta rama)                    │
-│         (session-2/azure-bay-rebranding)                    │
-│                                                               │
-│  🔨 Implementación de cambios                               │
-│  📝 Find & Replace operations                               │
+│              PERPLEXITY BRANCH (Esta rama)                 │
+│         (perplexity/feat - IA Feature Branch)              │
+│                                                             │
+│  🔨 Implementación de cambios                              │
+│  📝 Find & Replace operations                              │
 │  🖼️ Image integration                                       │
-│  📊 Data updates                                            │
+│  📊 Data updates                                           │
 └─────────────────────────────────────────────────────────────┘
                           ⬇️ MERGE (aprobado por ti)
 ┌─────────────────────────────────────────────────────────────┐
-│            BRANCHES FINALES (TÚ controlas)                   │
-│                                                               │
-│  📌 main (producción estable)                               │
-│  🔵 preview (staging/demo)                                  │
+│            BRANCHES FINALES (Sincronizadas)                │
+│                                                             │
+│  📌 main (producción estable)                              │
+│  🔵 preview (staging/demo)                                 │
 │  🟢 production (live)                                       │
-│  ⭐ session-2/azure-bay-rebranding (feature branch)        │
+│  ⭐ perplexity/feat (IA Feature)                            │
+│  🧪 development (testing personal)                         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 👨‍💻 MIS RESPONSABILIDADES (En session-2/azure-bay-rebranding)
+## 🧑‍💻 MIS RESPONSABILIDADES (En perplexity/feat)
 
 ### ✅ Haré:
 
-1. **Análisis y Implementación**
+1. **Análisis e Implementación**
    - [ ] Ejecutar Find & Replace operaciones
    - [ ] Actualizar precios y datos
    - [ ] Integrar imágenes Midjourney
@@ -72,15 +74,15 @@
 
 ### ❌ NO haré:
 
-- ❌ Push a otras ramas (solo trabajar en session-2)
+- ❌ Push a otras ramas (solo trabajar en perplexity/feat)
 - ❌ Desplegar a Vercel
 - ❌ Tomar decisiones de merge
 - ❌ Testing en ambiente de producción
-- ❌ Merge a main/preview/production
+- ❌ Merge a main/preview/production/development
 
 ---
 
-## 👤 TUS RESPONSABILIDADES (Rama development)
+## 🧑‍💼 TUS RESPONSABILIDADES (Rama development)
 
 ### ✅ Harás:
 
@@ -101,12 +103,12 @@
    - [ ] Aprobar calidad
    - [ ] Confirmar alineación con goal
 
-4. **Merge Centralizado**
-   - [ ] Pull cambios de session-2 a development
+4. **Merge Centralizado** (usar `./scripts/promote.ps1`)
+   - [ ] Pull cambios de perplexity/feat a development
    - [ ] Resolver conflictos si existen
-   - [ ] Hacer commit final
-   - [ ] Push a main, preview, production, session-2 simultáneamente
-   - [ ] Sincronizar todas las ramas
+   - [ ] Ejecutar script: `./scripts/promote.ps1`
+   - [ ] Script sincroniza: development → main → preview → production + perplexity/feat
+   - [ ] Todas las ramas alineadas automáticamente ✅
 
 ---
 
@@ -114,18 +116,18 @@
 
 ### CICLO DE CADA CAMBIO
 
-#### PASO 1: Yo desarrollo en session-2
+#### PASO 1: Yo desarrollo en perplexity/feat
 ```bash
 # Estoy en esta rama
 git branch
-# session-2/azure-bay-rebranding ← aquí estoy
+# perplexity/feat ← aquí estoy
 
 # Hago cambios
 echo "// Azure Bay updates" >> app/page.tsx
 
 # Commit atómico
 git add app/page.tsx
-git commit -m "[Session 2] Replace project name: Playa Viva → Azure Bay Residences"
+git commit -m "[Azure Bay] Replace project name: Playa Viva → Azure Bay Residences"
 ```
 
 #### PASO 2: Yo creo PR a tu development
@@ -133,8 +135,8 @@ git commit -m "[Session 2] Replace project name: Playa Viva → Azure Bay Reside
 # Crear PR (por GitHub UI o CLI)
 gh pr create \
   --base development \
-  --head session-2/azure-bay-rebranding \
-  --title "[Session 2] Azure Bay Rebranding - Batch 1" \
+  --head perplexity/feat \
+  --title "[Azure Bay] Rebranding - Batch 1: Naming" \
   --body "Changes implemented:
   - Replaced project name
   - Updated location references
@@ -150,7 +152,7 @@ git checkout development
 git pull origin development
 
 # Traes mis cambios (merge o PR merge)
-git merge origin/session-2/azure-bay-rebranding
+git merge origin/perplexity/feat
 
 # Pruebas localmente
 npm run dev
@@ -165,39 +167,19 @@ npm run dev
 # 2. O me avisas directamente: "Aprobado para merge"
 ```
 
-#### PASO 5: Tú sincronizas todas las ramas
+#### PASO 5: Tú sincronizas todas las ramas (AUTOMÁTICO)
 ```bash
 # En TU máquina, en development
-git status
-# On branch development
-# your branch is ahead of 'origin/development' by 3 commits
+# Ejecuta el script que sincroniza TODAS las ramas:
 
-# Push a development
-git push origin development
+.\scripts\promote.ps1
 
-# Sincroniza con main
-git checkout main
-git pull origin main
-git merge development
-git push origin main
-
-# Sincroniza con preview
-git checkout preview
-git pull origin preview
-git merge main
-git push origin preview
-
-# Sincroniza con production (si aplica)
-git checkout production
-git pull origin production
-git merge main
-git push origin production
-
-# Sincroniza mi rama
-git checkout session-2/azure-bay-rebranding
-git pull origin session-2/azure-bay-rebranding
-git merge main
-git push origin session-2/azure-bay-rebranding
+# El script hace automáticamente:
+# ✅ development → main
+# ✅ main → preview
+# ✅ preview → production
+# ✅ main ↔ perplexity/feat (sincronización bidireccional)
+# ✅ Rebase final para evitar desfases
 ```
 
 #### PASO 6: Confirmación
@@ -206,12 +188,12 @@ git push origin session-2/azure-bay-rebranding
 ✅ main: sincronizado con development
 ✅ preview: sincronizado con main
 ✅ production: sincronizado con main
-✅ session-2/azure-bay-rebranding: sincronizado con main
+✅ perplexity/feat: sincronizado con main
 ```
 
 ---
 
-## 📋 ESTADO DE RAMAS EN CUALQUIER MOMENTO
+## 📌 ESTADO DE RAMAS EN CUALQUIER MOMENTO
 
 ```
 main
@@ -221,24 +203,24 @@ main
 │  └─ Espejo de main
 ├─ production (deploy automático - live)
 │  └─ Espejo de main
-└─ session-2/azure-bay-rebranding (MI rama de trabajo)
+└─ perplexity/feat (MI rama de trabajo - IA)
    └─ Sincronizado con main después de tus merges
 ```
 
 ---
 
-## 📊 CICLO DE CAMBIOS - TIMELINE
+## ⏱️ CICLO DE CAMBIOS - TIMELINE
 
 ### Batch 1: Naming & Location (Ejemplo)
 
 ```
-⏱️ T+0min: Yo comienzo en session-2
+⏱️ T+0min: Yo comienzo en perplexity/feat
   └─ Find & Replace: "Playa Viva" → "Azure Bay"
   └─ Actualizar ubicación
-  └─ Commit: "[Session 2] Replace project name"
+  └─ Commit: "[Azure Bay] Replace project name"
 
 ⏱️ T+15min: Creo PR a development
-  └─ PR Title: "[Session 2] Azure Bay Naming - Batch 1"
+  └─ PR Title: "[Azure Bay] Naming - Batch 1"
   └─ PR Description: Detallado
   └─ Estado: "Ready for review"
 
@@ -252,15 +234,14 @@ main
   └─ Comentario en PR: "LGTM ✅"
   └─ O mensaje directo: "Aprobado"
 
-⏱️ T+50min: Tú sincronizas todas las ramas
-  └─ Push a main
-  └─ Push a preview
-  └─ Push a production (si aplica)
-  └─ Push a session-2
+⏱️ T+50min: Tú sincronizas todas las ramas (SCRIPT AUTOMÁTICO)
+  └─ .\scripts\promote.ps1
+  └─ development → main → preview → production
+  └─ perplexity/feat sincronizado
   └─ Todas alineadas ✅
 
 ⏱️ T+55min: Siguiente batch
-  └─ Yo continúo en session-2
+  └─ Yo continúo en perplexity/feat
   └─ Nuevos cambios (precios, imágenes, etc.)
   └─ Repito ciclo
 ```
@@ -279,10 +260,10 @@ main
 - Todos los cambios documentados
 - PRs muestran qué cambió
 
-✅ **Rapidez**
+✅ **Rapidez + Automatización**
+- Script `promote.ps1` sincroniza TODO automáticamente
+- No necesitas hacer merges manuales
 - Paralelo mientras pruebas
-- No esperas a que haga PRs
-- Múltiples cambios en flight
 
 ✅ **Control de calidad**
 - Testing local antes de merge
@@ -302,7 +283,7 @@ main
 ```bash
 # ✅ Correcto: Tú traes cambios a development
 git checkout development
-git pull origin session-2/azure-bay-rebranding
+git pull origin development
 
 # ❌ Incorrecto: Yo no hago push a main/preview/production
 git push origin main  # ← NO, nunca
@@ -310,38 +291,30 @@ git push origin main  # ← NO, nunca
 
 ### 2. **Merge centralizado SOLO por ti**
 ```bash
-# ✅ Solo tú:
-git checkout main && git merge development && git push
+# ✅ Solo tú (usando el script):
+.\scripts\promote.ps1
 
 # ❌ Yo no:
-git checkout main && git merge session-2/...  # ← NO
+git checkout main && git merge perplexity/feat  # ← NO
 ```
 
 ### 3. **PRs como comunicación**
 ```bash
 # ✅ Cada batch de cambios = 1 PR
-git commit -m "[Session 2] Batch 1: Naming & Location"
-gh pr create --base development --head session-2/...
+git commit -m "[Azure Bay] Batch 1: Naming & Location"
+gh pr create --base development --head perplexity/feat
 
 # ❌ Muchos commits sin PR
 # Sin contexto de qué cambió y por qué
 ```
 
-### 4. **Commits con contexto**
+### 4. **El script lo hace TODO**
 ```bash
-# ✅ Mensaje claro
-git commit -m "[Session 2] Replace project name: Playa Viva → Azure Bay Residences
+# ✅ Una línea sincroniza todas las ramas:
+.\scripts\promote.ps1
 
-Changes:
-- Update hero title (ES/EN)
-- Update structured data
-- Update content objects
-- Update meta tags
-
-Lines: 110-125, 180-500, 1150"
-
-# ❌ Vago
-git commit -m "updates"  # ← No
+# ❌ No hagas merges manuales:
+# git merge main  # ← El script ya lo hace
 ```
 
 ---
@@ -363,6 +336,9 @@ git commit -m "updates"  # ← No
 
 ✅ Allow development to be unprotected
   └─ Facilita merges rápidos
+
+✅ Allow perplexity/feat to be unprotected
+  └─ Facilita PRs rápidos
 ```
 
 ### En Git local (tu config)
@@ -373,12 +349,11 @@ git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 
-# Para sincronizar todas las ramas más fácil:
-git config --global alias.sync-all '!git fetch && \
-  git checkout main && git merge development && git push && \
-  git checkout preview && git merge main && git push && \
-  git checkout production && git merge main && git push && \
-  git checkout session-2/azure-bay-rebranding && git merge main && git push'
+# Alias para ejecutar promote
+git config --global alias.promote '!powershell -Command ".\\scripts\\promote.ps1"'
+
+# Entonces puedes hacer:
+git promote
 ```
 
 ---
@@ -387,7 +362,7 @@ git config --global alias.sync-all '!git fetch && \
 
 ### Cuando termino un batch:
 ```
-💬 "Batch 1 completado en session-2/azure-bay-rebranding
+💬 "Batch 1 completado en perplexity/feat
    - PR creado: #XX
    - Changes: Naming, Location, Meta tags
    - Ready para test en tu development"
@@ -395,8 +370,8 @@ git config --global alias.sync-all '!git fetch && \
 
 ### Cuando das visto bueno:
 ```
-💬 "✅ LGTM - Procediendo a sincronizar todas las ramas
-   development → main → preview → production → session-2"
+💬 "✅ LGTM - Ejecutando .\scripts\promote.ps1
+   Todas las ramas sincronizadas automáticamente"
 ```
 
 ### Si encuentro blocking issue:
@@ -411,21 +386,22 @@ git config --global alias.sync-all '!git fetch && \
 
 ### Antes de comenzar:
 - [ ] Entiendo el workflow
-- [ ] Tengo acceso a desarrollo local
+- [ ] `promote.ps1` está actualizado
+- [ ] Rama: `perplexity/feat` existe
 - [ ] Git está configurado
 - [ ] Ramas están actualizadas
 
 ### Durante la sesión 2:
-- [ ] Yo desarrollo en session-2
+- [ ] Yo desarrollo en perplexity/feat
 - [ ] Creo PRs claros
 - [ ] Tú pruebas en development
-- [ ] Tú sincronizas ramas
-- [ ] Todo aligned
+- [ ] Tú ejecutas `./scripts/promote.ps1`
+- [ ] Todo sincronizado automáticamente
 
 ### Al final de Session 2:
 - [ ] Todos los cambios en todas las ramas
 - [ ] development = main = preview = production
-- [ ] session-2 sincronizado con main
+- [ ] perplexity/feat sincronizado con main
 - [ ] Histórico Git completo y limpio
 - [ ] Ready para Session 3 (testing + deploy)
 
@@ -434,9 +410,11 @@ git config --global alias.sync-all '!git fetch && \
 ## 🚀 ESTAMOS LISTOS
 
 **Plan confirmado:**
-1. Tú: development (testing + validación)
-2. Yo: session-2/azure-bay-rebranding (implementación)
-3. Tú: Sincronización centralizada
+1. Yo: `perplexity/feat` (implementación)
+2. Tú: `development` (testing + validación)
+3. Tú: `./scripts/promote.ps1` (sincronización automática)
 4. Resultado: Todas las ramas alineadas
 
-**¿Comenzamos?** Avísame cuando estés listo y empiezo Batch 1 en session-2. 🚀
+**Ventaja**: El script hace TODO, solo ejecuta una línea y listo.
+
+¿Comenzamos? 🚀
