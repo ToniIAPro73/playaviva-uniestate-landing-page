@@ -368,7 +368,7 @@ export default function PlayaVivaLanding() {
         subtitle: "AL MARJAN ISLAND, RAS AL KHAIMAH",
         description:
           "Invierta en lujo frente al mar junto al nuevo Wynn Casino de $5.1B. Rentabilidades del 7-8%",
-        price: "Desde €170.000",
+        price: "Desde €192.000",
         payment: "Pague solo 1% mensual durante 5 años",
         handover: "Entrega Junio 2026",
         cta1: "Descargar Dossier",
@@ -434,25 +434,25 @@ export default function PlayaVivaLanding() {
             {
               title: "Studios",
               size: "27.87-42.9 m²",
-              price: "Desde 170.000€",
+              price: "Desde 192.000€",
               features: "Cocina integrada, baño premium, balcón privado"
             },
             {
               title: "1 Dormitorio",
               size: "55.74-78.97 m²",
-              price: "Desde 285.000€",
+              price: "Desde 325.000€",
               features: "Suite en-suite, vestidor, zona de lavandería"
             },
             {
               title: "2 Dormitorios",
               size: "102.19-111.48 m²",
-              price: "Desde 450.000€",
+              price: "Desde 540.000€",
               features: "Dos suites, cocina isla, balcones duales"
             },
             {
               title: "3 Dormitorios",
               size: "157.94-167.22 m²",
-              price: "Desde 650.000€",
+              price: "Desde 740.000€",
               features: "Master suite, cuarto de servicio, terraza 25m²"
             }
           ]
