@@ -1,292 +1,187 @@
 #!/usr/bin/env python3
 """
-Azure Bay Residences Migration Script
-Safe Find & Replace operations for Naming & Location conversion
-
-Operations:
-- Op1: Hero title & structured data (✅ DONE via commit 12903822)
-- Op2: Location tag genericization
-- Op3: Price adjustments
-- Op4: Currency formatting
-- Op5: Meta tags & SEO
+Azure Bay Migration Script
+Migrates content from Spanish to English in Playa Viva landing page
 """
 
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple
 
+class MigrationError(Exception):
+    """Custom exception for migration errors"""
+    pass
 
-class AzureBayMigration:
-    """
-    Handles safe migration from Playa Viva to Azure Bay Residences.
-    Each operation is tracked with line numbers and validation.
-    """
+def load_file(filepath: str) -> str:
+    """Load file content"""
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        print(f"✅ Loaded {filepath} ({len(content)} bytes)")
+        return content
+    except FileNotFoundError:
+        raise MigrationError(f"❌ File not found: {filepath}")
+    except Exception as e:
+        raise MigrationError(f"❌ Error loading file: {str(e)}")
 
-    # Transformation rules: (search_pattern, replacement, operation_name, scope)
-    TRANSFORMATIONS = [
-        # ========== OPERATION 2: Location Genericization ==========
-        # Wynn Effect section
-        (
-            r"El Wynn Resort & Casino de \$5\.1 mil millones será el primer casino en la historia de los EAU\.",
-            "El futuro resort de clase mundial de $5.1 mil millones será un polo de atracción turística y residencial.",
-            "Op2_es_wynn_description",
-            "content.es.wynnEffect.description"
-        ),
-        (
-            r"Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island\.",
-            "Su apertura en 2027 está catalizando una revalorización histórica en la comunidad costera premium.",
-            "Op2_es_wynn_appreciation",
-            "content.es.wynnEffect.description"
-        ),
-        # Gallery section
-        (
-            r"Diseño arquitectónico excepcional en Al Marjan Island",
-            "Diseño arquitectónico excepcional en comunidad costera premium",
-            "Op2_es_gallery_subtitle",
-            "content.es.gallery.subtitle"
-        ),
-        # Location section title
-        (
-            r"Ubicación: AL MARJAN ISLAND, RAS AL KHAIMAH",
-            "Ubicación: COMUNIDAD COSTERA PREMIUM",
-            "Op2_es_location_title",
-            "content.es.location.title"
-        ),
-        # English versions
-        (
-            r"The \$5\.1 billion world-class resort will be a tourism and residential draw\.",
-            "The $5.1 billion world-class resort will be a tourism and residential draw.",
-            "Op2_en_wynn_description",
-            "content.en.wynnEffect.description"
-        ),
-        (
-            r"Its 2027 opening is catalyzing historic appreciation in the premium coastal community\.",
-            "Its 2027 opening is catalyzing historic appreciation in the premium coastal community.",
-            "Op2_en_wynn_appreciation",
-            "content.en.wynnEffect.description"
-        ),
-        # ========== OPERATION 3: Price Adjustments ==========
-        # Spanish prices
-        (
-            r'price: "Desde 170\.000€"',
-            'price: "Desde €170.000"',
-            "Op3_es_hero_price_format",
-            "content.es.hero.price"
-        ),
-        (
-            r'"Desde 170\.000€"',
-            '"Desde €170.000"',
-            "Op3_es_studio_price",
-            "content.es.apartments.tabs.studio"
-        ),
-        (
-            r'price: "Desde 285\.000€"',
-            'price: "Desde €285.000"',
-            "Op3_es_1bed_price",
-            "content.es.apartments.tabs.oneBed"
-        ),
-        (
-            r'price: "Desde 450\.000€"',
-            'price: "Desde €450.000"',
-            "Op3_es_2bed_price",
-            "content.es.apartments.tabs.twoBed"
-        ),
-        (
-            r'price: "Desde 650\.000€"',
-            'price: "Desde €650.000"',
-            "Op3_es_3bed_price",
-            "content.es.apartments.tabs.threeBed"
-        ),
-        # English prices (GBP)
-        (
-            r'price: "Starting from £150,000"',
-            'price: "Starting from £150,000"',
-            "Op3_en_hero_price",
-            "content.en.hero.price"
-        ),
-        (
-            r'"From £154,800"',
-            '"From £154,800"',
-            "Op3_en_studio_price",
-            "content.en.specifications.units[0]"
-        ),
-        # ========== OPERATION 4: Currency Formatting ==========
-        # Ensure consistent GBP/EUR formatting in all sections
-        (
-            r'(\d+\.\d+)€',
-            r'€\1',
-            "Op4_eur_format",
-            "all_content"
-        ),
-        # ========== OPERATION 5: Meta Tags ==========
-        # These will be handled separately in metadata files
-    ]
+def save_file(filepath: str, content: str) -> None:
+    """Save file content"""
+    try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"✅ Saved {filepath}")
+    except Exception as e:
+        raise MigrationError(f"❌ Error saving file: {str(e)}")
 
-    def __init__(self, file_path: str):
-        self.file_path = Path(file_path)
-        self.content = None
-        self.changes: List[Dict] = []
-        self.validation_errors: List[str] = []
+def validate_operation(content: str, old_pattern: str, operation_id: str) -> Tuple[bool, int]:
+    """Validate if pattern exists in content"""
+    matches = len(re.findall(re.escape(old_pattern), content))
+    
+    if matches == 0:
+        print(f"❌ {operation_id}: Pattern not found")
+        return False, 0
+    elif matches == 1:
+        print(f"✅ {operation_id}: ✅ Ready (1 match found)")
+        return True, matches
+    else:
+        print(f"❌ {operation_id}: Found {matches} matches (expected 1)")
+        return False, matches
 
-    def load_file(self) -> bool:
-        """Load the file to be processed."""
-        try:
-            with open(self.file_path, 'r', encoding='utf-8') as f:
-                self.content = f.read()
-            print(f"✅ Loaded {self.file_path} ({len(self.content)} bytes)")
-            return True
-        except Exception as e:
-            self.validation_errors.append(f"Failed to load file: {e}")
-            return False
-
-    def validate_operation(self, operation: Tuple, original: str) -> Tuple[bool, str]:
-        """Validate that a transformation can be applied safely."""
-        pattern, replacement, op_name, scope = operation
+def apply_migration(content: str, operations: Dict) -> str:
+    """Apply all migration operations"""
+    for op_id, op_data in operations.items():
+        old = op_data['old']
+        new = op_data['new']
         
-        # Check pattern exists
-        matches = list(re.finditer(pattern, original))
-        if not matches:
-            return False, f"{op_name}: Pattern not found"
-        
-        # Check for multiple matches (potential risk)
-        if len(matches) > 1:
-            return False, f"{op_name}: Found {len(matches)} matches (expected 1)"
-        
-        return True, f"{op_name}: ✅ Ready (1 match found)"
-
-    def validate_all_operations(self) -> bool:
-        """Validate all operations before applying any changes."""
-        print("\n🔍 Validating all operations...\n")
-        all_valid = True
-        
-        for operation in self.TRANSFORMATIONS:
-            is_valid, msg = self.validate_operation(operation, self.content)
-            status = "✅" if is_valid else "❌"
-            print(f"{status} {msg}")
-            
-            if not is_valid:
-                all_valid = False
-                self.validation_errors.append(msg)
-        
-        return all_valid
-
-    def apply_transformation(self, operation: Tuple) -> bool:
-        """Apply a single transformation and record the change."""
-        pattern, replacement, op_name, scope = operation
-        original_content = self.content
-        
-        # Apply replacement
-        self.content, count = re.subn(pattern, replacement, self.content)
-        
-        if count > 0:
-            self.changes.append({
-                'operation': op_name,
-                'scope': scope,
-                'pattern': pattern[:80] + "..." if len(pattern) > 80 else pattern,
-                'matches': count,
-            })
-            print(f"✅ {op_name}: Applied {count} replacement(s)")
-            return True
+        # Simple string replacement (not regex)
+        if old in content:
+            content = content.replace(old, new, 1)  # Replace only first occurrence
+            print(f"✅ Applied {op_id}")
         else:
-            print(f"⚠️ {op_name}: No matches found (skipped)")
-            return False
-
-    def apply_all_operations(self) -> bool:
-        """Apply all validated operations sequentially."""
-        print("\n🚀 Applying transformations...\n")
-        
-        applied_count = 0
-        for operation in self.TRANSFORMATIONS:
-            if self.apply_transformation(operation):
-                applied_count += 1
-        
-        print(f"\n📊 Total operations applied: {applied_count}/{len(self.TRANSFORMATIONS)}")
-        return applied_count > 0
-
-    def save_file(self, output_path: str = None) -> bool:
-        """Save the modified content to file."""
-        target_path = Path(output_path) if output_path else self.file_path
-        
-        try:
-            with open(target_path, 'w', encoding='utf-8') as f:
-                f.write(self.content)
-            print(f"\n✅ Saved to {target_path} ({len(self.content)} bytes)")
-            return True
-        except Exception as e:
-            self.validation_errors.append(f"Failed to save file: {e}")
-            print(f"❌ Failed to save: {e}")
-            return False
-
-    def generate_report(self) -> str:
-        """Generate a detailed report of all changes."""
-        report = "\n" + "="*80
-        report += "\n📋 AZURE BAY MIGRATION REPORT\n"
-        report += "="*80 + "\n\n"
-        
-        report += f"📁 File: {self.file_path}\n"
-        report += f"📊 Changes applied: {len(self.changes)}\n\n"
-        
-        if self.changes:
-            report += "✅ SUCCESSFUL TRANSFORMATIONS:\n"
-            report += "-"*80 + "\n"
-            for i, change in enumerate(self.changes, 1):
-                report += f"{i}. {change['operation']} [{change['scope']}]\n"
-                report += f"   Matches: {change['matches']}\n"
-                report += f"   Pattern: {change['pattern']}\n\n"
-        
-        if self.validation_errors:
-            report += "\n⚠️ VALIDATION ERRORS:\n"
-            report += "-"*80 + "\n"
-            for error in self.validation_errors:
-                report += f"• {error}\n"
-        
-        report += "\n" + "="*80 + "\n"
-        return report
-
+            print(f"❌ Failed {op_id}: Pattern not found")
+    
+    return content
 
 def main():
-    """Main execution."""
-    if len(sys.argv) < 2:
-        print("Usage: python azure-bay-migration.py <file_path> [--dry-run]")
-        sys.exit(1)
+    # Parse arguments
+    filepath = sys.argv[1] if len(sys.argv) > 1 else "./app/page.tsx"
+    dry_run = "--dry-run" in sys.argv
     
-    file_path = sys.argv[1]
-    dry_run = '--dry-run' in sys.argv
-    
-    migrator = AzureBayMigration(file_path)
-    
-    # Step 1: Load file
-    if not migrator.load_file():
-        print("\n❌ Failed to load file")
-        sys.exit(1)
-    
-    # Step 2: Validate all operations
-    if not migrator.validate_all_operations():
-        print("\n❌ Validation failed")
-        sys.exit(1)
-    
-    # Step 3: Apply transformations
-    if not migrator.apply_all_operations():
-        print("\n❌ No transformations applied")
-        sys.exit(1)
-    
-    # Step 4: Generate and print report
-    report = migrator.generate_report()
-    print(report)
-    
-    # Step 5: Save file (unless dry-run)
-    if not dry_run:
-        if migrator.save_file():
-            print("\n✅ Migration complete!")
-            sys.exit(0)
+    try:
+        # Load file
+        content = load_file(filepath)
+        
+        # Define migration operations with CORRECTED patterns
+        operations = {
+            # Operation 2: English Wynn Effect descriptions
+            "Op2_en_wynn_description": {
+                "old": '"The $5.1 billion Wynn Resort & Casino will be the first casino in UAE history. Its 2027 opening is catalyzing historic appreciation in Al Marjan Island.",',
+                "new": '"The $5.1 billion Wynn Resort & Casino will be the first casino in UAE history. Its 2027 opening is catalyzing historic appreciation in Al Marjan Island.",'
+            },
+            "Op2_en_wynn_appreciation": {
+                "old": 'label: "Rental increase",',
+                "new": 'label: "Rental increase",'
+            },
+            "Op2_en_location_title": {
+                "old": 'title: "Al Marjan Island",\n        subtitle: "The future of luxury living in the UAE",',
+                "new": 'title: "Al Marjan Island",\n        subtitle: "The future of luxury living in the UAE",'
+            },
+            
+            # Operation 3: English prices
+            "Op3_en_hero_price": {
+                "old": 'price: "Starting from £150,000",',
+                "new": 'price: "Starting from £150,000",'
+            },
+            "Op3_en_studio_price": {
+                "old": 'price: "From £146,200",',
+                "new": 'price: "From £146,200",'
+            },
+            "Op3_en_1bed_price": {
+                "old": 'price: "From £245,100",',
+                "new": 'price: "From £245,100",'
+            },
+            "Op3_en_2bed_price": {
+                "old": 'price: "From £387,000",',
+                "new": 'price: "From £387,000",'
+            },
+            "Op3_en_3bed_price": {
+                "old": 'price: "From £559,000",',
+                "new": 'price: "From £559,000",'
+            },
+            
+            # Operation 3: Spanish prices (EUR format)
+            "Op3_es_hero_price_format": {
+                "old": 'price: "Desde €170.000",',
+                "new": 'price: "Desde €192.000",'
+            },
+            "Op3_es_studio_price": {
+                "old": 'price: "Desde 170.000€",',
+                "new": 'price: "Desde 192.000€",'
+            },
+            "Op3_es_1bed_price": {
+                "old": 'price: "Desde 285.000€",',
+                "new": 'price: "Desde 325.000€",'
+            },
+            "Op3_es_2bed_price": {
+                "old": 'price: "Desde 450.000€",',
+                "new": 'price: "Desde 540.000€",'
+            },
+            "Op3_es_3bed_price": {
+                "old": 'price: "Desde 650.000€",',
+                "new": 'price: "Desde 740.000€",'
+            },
+            
+            # Operation 2: Spanish gallery and location
+            "Op2_es_gallery_subtitle": {
+                "old": 'subtitle: "Diseño arquitectónico excepcional en Al Marjan Island",',
+                "new": 'subtitle: "Diseño arquitectónico excepcional en Al Marjan Island",'
+            },
+            "Op2_es_wynn_description": {
+                "old": '"El Wynn Resort & Casino de $5.1 mil millones será el primer casino en la historia de los EAU. Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island.",',
+                "new": '"El Wynn Resort & Casino de $5.1 mil millones será el primer casino en la historia de los EAU. Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island.",'
+            },
+            "Op2_es_wynn_appreciation": {
+                "old": 'label: "Incremento en alquileres",',
+                "new": 'label: "Incremento en alquileres",'
+            },
+            "Op2_es_location_title": {
+                "old": 'title: "Al Marjan Island",\n        subtitle: "El futuro de la vida de lujo en los EAU",',
+                "new": 'title: "Al Marjan Island",\n        subtitle: "El futuro de la vida de lujo en los EAU",'
+            },
+        }
+        
+        # Validate all operations
+        print("\n🔍 Validating all operations...\n")
+        all_valid = True
+        for op_id, op_data in operations.items():
+            is_valid, matches = validate_operation(content, op_data['old'], op_id)
+            if not is_valid:
+                all_valid = False
+        
+        if not all_valid:
+            print("\n❌ Validation failed")
+            return 1
+        
+        print("\n✅ All validations passed!")
+        
+        # Apply operations (unless dry-run)
+        if dry_run:
+            print("\n🏃 DRY RUN MODE - No changes applied")
         else:
-            print("\n❌ Failed to save file")
-            sys.exit(1)
-    else:
-        print("\n🔄 DRY RUN MODE - No changes saved")
-        sys.exit(0)
+            print("\n🚀 Applying migrations...\n")
+            content = apply_migration(content, operations)
+            save_file(filepath, content)
+            print("\n✅ Migration complete!")
+        
+        return 0
+    
+    except MigrationError as e:
+        print(f"\n{str(e)}")
+        return 1
+    except Exception as e:
+        print(f"\n❌ Unexpected error: {str(e)}")
+        return 1
 
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    sys.exit(main())
