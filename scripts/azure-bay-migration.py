@@ -79,9 +79,10 @@ def main():
                 "old": '"The $5.1 billion Wynn Resort & Casino will be the first casino in UAE history. Its 2027 opening is catalyzing historic appreciation in Al Marjan Island.",',
                 "new": '"The $5.1 billion Wynn Resort & Casino will be the first casino in UAE history. Its 2027 opening is catalyzing historic appreciation in Al Marjan Island.",'
             },
+            # More specific: include context before and after
             "Op2_en_wynn_appreciation": {
-                "old": 'label: "Rental increase",',
-                "new": 'label: "Rental increase",'
+                "old": 'value: "+50%",\n            label: "Rental increase",\n            sublabel: "Q1 2023 - Q1 2025",',
+                "new": 'value: "+50%",\n            label: "Rental increase",\n            sublabel: "Q1 2023 - Q1 2025",'
             },
             "Op2_en_location_title": {
                 "old": 'title: "Al Marjan Island",\n        subtitle: "The future of luxury living in the UAE",',
@@ -141,9 +142,10 @@ def main():
                 "old": '"El Wynn Resort & Casino de $5.1 mil millones será el primer casino en la historia de los EAU. Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island.",',
                 "new": '"El Wynn Resort & Casino de $5.1 mil millones será el primer casino en la historia de los EAU. Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island.",'
             },
+            # More specific: include context before and after
             "Op2_es_wynn_appreciation": {
-                "old": 'label: "Incremento en alquileres",',
-                "new": 'label: "Incremento en alquileres",'
+                "old": 'value: "+50%",\n            label: "Incremento en alquileres",\n            sublabel: "Q1 2023 - Q1 2025",',
+                "new": 'value: "+50%",\n            label: "Incremento en alquileres",\n            sublabel: "Q1 2023 - Q1 2025",'
             },
             "Op2_es_location_title": {
                 "old": 'title: "Al Marjan Island",\n        subtitle: "El futuro de la vida de lujo en los EAU",',
