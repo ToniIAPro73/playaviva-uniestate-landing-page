@@ -1,6 +1,7 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "meridian-coastal-group-landing",
+  "version": "1.0.0",
+  "description": "Premium real estate landing page for Meridian Coastal Group - Azure Bay District portfolio case study",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -10,6 +11,16 @@
     "start": "next start",
     "test": "vitest run"
   },
+  "keywords": [
+    "real-estate",
+    "luxury",
+    "residential",
+    "coastal",
+    "azure-bay",
+    "meridian-coastal-group"
+  ],
+  "author": "Anclora Cognitive Solutions",
+  "license": "MIT",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.932.0",
     "@aws-sdk/s3-request-presigner": "^3.932.0",
