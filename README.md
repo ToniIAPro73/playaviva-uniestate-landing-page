@@ -4,7 +4,7 @@
 
 *This repository is automatically synced with [v0.app](https://v0.app) deployments*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://meridian-coastal-group.vercel.app)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://azurebay-meridian.vercel.app)
 [![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -12,7 +12,7 @@
 
 Azure Bay is a fictional residential real estate development created by **Meridian Coastal Group** as a portfolio case study to demonstrate premium landing page design, bilingual content management, lead automation, and investment narrative structure.
 
-**Project Location**: https://meridian-coastal-group.vercel.app
+**Project Location**: https://azurebay-meridian.vercel.app
 
 ### Key Features
 
@@ -116,7 +116,7 @@ cp .env.example .env.local
 4. Configure environment variables
 ```env
 # Site Configuration
-NEXT_PUBLIC_SITE_URL=https://meridian-coastal-group.vercel.app
+NEXT_PUBLIC_SITE_URL=https://azurebay-meridian.vercel.app
 
 # Security
 RECAPTCHA_ENTERPRISE_PROJECT_ID=your_recaptcha_project_id
@@ -191,7 +191,7 @@ git push origin main
 
 4. Deploy automatically on push to main
 
-**Live URL**: https://meridian-coastal-group.vercel.app
+**Live URL**: https://azurebay-meridian.vercel.app
 
 ## 📝 Content Management
 
