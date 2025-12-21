@@ -361,18 +361,18 @@ export default function PlayaVivaLanding() {
   const content = {
     es: {
       hero: {
-        title: "Playa Viva",
-        subtitle: "AL MARJAN ISLAND, RAS AL KHAIMAH",
+        title: "Azure Bay",
+        subtitle: "AZURE BAY • DISTRITO COSTERO EN EXPANSIÓN",
         description:
-          "Invierta en lujo frente al mar junto al nuevo Wynn Casino de $5.1B. Rentabilidades del 7-8%",
-        price: "Desde €192.000",
+          "Caso de estudio (portfolio): complejo residencial ficticio frente al mar, impulsado por la futura Azure Grand Marina (primavera 2027). Proyecciones orientativas.",
+        price: "Desde €198.000",
         payment: "Pague solo 1% mensual durante 5 años",
-        handover: "Entrega Junio 2026",
+        handover: "Entrega Q3 2026",
         cta1: "Descargar Dossier",
         cta2: "Reservar Ahora",
       },
       menu: {
-        wynnEffect: "El Efecto Wynn",
+        wynnEffect: "El Efecto Marina",
         investment: "Inversión",
         features: "Características",
         gallery: "Galería",
@@ -381,35 +381,35 @@ export default function PlayaVivaLanding() {
         faq: "FAQ",
       },
       wynnEffect: {
-        title: "El Efecto Wynn",
-        subtitle: "La oportunidad que está transformando Ras Al Khaimah",
+        title: "El Efecto Marina",
+        subtitle: "El catalizador que está transformando Azure Bay District",
         description:
-          "El Wynn Resort & Casino de $5.1 mil millones será el primer casino en la historia de los EAU. Su apertura en 2027 está catalizando una revalorización histórica en Al Marjan Island.",
+          "La futura Azure Grand Marina & Signature Boulevard (apertura prevista en primavera de 2027) está atrayendo inversión, turismo y nueva demanda residencial. El mercado se posiciona antes del hito para capturar el ciclo completo de apreciación del waterfront.",
         stats: [
           {
             icon: TrendingUp,
-            value: "+50%",
-            label: "Incremento en alquileres",
-            sublabel: "Q1 2023 - Q1 2025",
+            value: "+32%",
+            label: "Impulso de demanda",
+            sublabel: "Proyección 2025–2027",
           },
           {
             icon: DollarSign,
-            value: "$5.1B",
-            label: "Inversión Wynn Resort",
-            sublabel: "Primer casino de los EAU",
+            value: "€3.4B",
+            label: "Inversión en distrito",
+            sublabel: "Marina + boulevard + retail",
           },
           {
             icon: Calendar,
-            value: "Q2 2027",
-            label: "Apertura del Wynn Resort",
-            sublabel: "Momento de máxima revalorización",
+            value: "Prim. 2027",
+            label: "Apertura Marina",
+            sublabel: "Hito de consolidación",
           },
         ],
         urgency: {
-          title: "¿Por qué invertir AHORA?",
+          title: "¿Por qué posicionarse AHORA?",
           description:
-            "Los inversores sofisticados están posicionándose antes de la apertura del Wynn en 2027. Playa Viva se entrega en Q2 2026, permitiéndole capitalizar el efecto completo.",
-          countdown: "Entrega: Q2 2026 • Wynn apertura: Q2 2027",
+            "Los inversores sofisticados se adelantan a la apertura de la marina y a la activación del paseo comercial. Azure Bay se entrega en Q3 2026, para capturar la ventana de apreciación previa y posterior al lanzamiento.",
+          countdown: "Entrega: Q3 2026 • Apertura Marina: Primavera 2027",
         },
       },
       features: {
@@ -418,8 +418,8 @@ export default function PlayaVivaLanding() {
           title: "Estructura del Desarrollo",
           tagline: "Arquitectura contemporánea frente al mar",
           description: [
-            "Tres torres icónicas que combinan elegancia atemporal con el entorno costero de Al Marjan Island.",
-            "Diseño arquitectónico que maximiza vistas panorámicas al Golfo Arábigo desde cada residencia.",
+            "Tres torres icónicas que combinan elegancia atemporal con el entorno costero de Azure Bay District.",
+            "Diseño arquitectónico que maximiza vistas panorámicas al mar abierto desde cada residencia.",
           ],
           image: "/assets/imagenes/collage_estructura_es.png",
         },
@@ -454,9 +454,9 @@ export default function PlayaVivaLanding() {
             },
           ],
         },
-        // FEATURES_3: Playa Viva Views
+        // FEATURES_3: Azure Bay Views
         playaViva: {
-          title: "Playa Viva",
+          title: "Azure Bay",
           tagline: "Cuatro perspectivas de vida frente al mar",
           tabs: [
             {
@@ -519,9 +519,9 @@ export default function PlayaVivaLanding() {
       },
       gallery: {
         title: "El Proyecto",
-        subtitle: "Diseño arquitectónico excepcional en Al Marjan Island",
+        subtitle: "Diseño arquitectónico excepcional en Azure Bay District",
         description:
-          "Explore la elegancia y sofisticación de Playa Viva a través de renders de alta resolución y fotografías del entorno.",
+          "Explore la elegancia y sofisticación de Azure Bay a través de renders de alta resolución y fotografías del entorno.",
       },
       apartments: {
         title: "Colección de Apartamentos",
@@ -538,7 +538,7 @@ export default function PlayaVivaLanding() {
             highlights: [
               "Totalmente amueblados con domótica y electrodomésticos premium",
               "Baño hotelero con acabados de piedra natural",
-              "Ideal para renta corporativa o pied-à-terre en Ras Al Khaimah",
+              "Ideal para renta corporativa o pied-à-terre en Azure Coast",
             ],
             parking: "Opción de aparcacoches gratuito para residentes",
           },
@@ -574,72 +574,70 @@ export default function PlayaVivaLanding() {
             highlights: [
               "Habitación principal con baño spa y walk-in closet de 6 metros",
               "Cuarto de servicio con baño independiente",
-              "Vistas de 180° hacia el mar y el skyline de Wynn Resort",
+              "Vistas de 180° hacia el mar y el skyline de la Azure Grand Marina",
             ],
             parking: "2 plazas de parking incluidas",
           },
         },
       },
       trust: {
-        title: "Respaldado por Líderes Inmobiliarios",
-        subtitle: "Uniestate y partners de confianza",
+        title: "Caso de Estudio (Portfolio)",
+        subtitle: "Landing premium + automatización de captación",
         description:
-          "Uniestate Properties es una promotora inmobiliaria consolidada y de confianza en los Emiratos Árabes Unidos (EAU) con una trayectoria que se remonta a 1995. Uniestate UK es la agencia elegida por Uniestate para la comercialización de Playa Viva por su amplia trayectoria en el sector inmobiliario de lujo.",
-        partners: "Cobertura en medios especializados",
-        readMore: "Leer en el medio",
+          "Proyecto ficticio creado por Anclora Cognitive Solutions (Anclora Nexus Group) para demostrar un servicio integral: diseño UI premium, copy bilingüe, estructura de conversión y automatización del lead magnet (dossier).",
+        partners: "Cobertura (mock) para contexto narrativo",
+        readMore: "Ver ejemplo",
         articles: [
           {
-            date: "10 Noviembre 2025",
+            date: "Mayo 2026",
             image: "/assets/imagenes/news_1.png",
-            alt: "Hotel Management Network - Wynn Resorts Second Resort",
-            source: "Hotel Management Network",
-            title:
-              "Wynn Resorts reveals plans for second resort at Ras Al Khaimah",
+            alt: "Coastal Development Review - Azure Grand Marina",
+            source: "Coastal Development Review",
+            title: "Azure Grand Marina: el nuevo polo del waterfront",
             summary:
-              "Wynn Resorts anuncia planes para un segundo resort de lujo en Ras Al Khaimah, reforzando el posicionamiento de Al Marjan Island como destino premium en los EAU.",
-            url: "https://www.hotelmanagement-network.com/news/wynn-resorts-marjan-second-resort/",
+              "Anuncio de la marina, boulevard comercial y oferta gastronómica como catalizador del distrito costero.",
+            url: "https://example.com",
           },
           {
-            date: "7 Noviembre 2025",
+            date: "Abril 2026",
             image: "/assets/imagenes/news_2.webp",
-            alt: "The National - Escape to Dubai",
-            source: "The National",
-            title:
-              "Escape to Dubai from high-tax Britain more tempting as 75% fear higher rates",
+            alt: "Global Wealth Digest - Coastal migration",
+            source: "Global Wealth Digest",
+            title: "La nueva ola de inversión en distritos costeros emergentes",
             summary:
-              "Reports record migration of wealthy individuals to UAE, with the emirates experiencing 'a net inflow of 9,800 millionaires from around the world in the past year.'",
-            url: "https://www.thenationalnews.com/news/uae/2025/11/07/flight-to-dubai-from-high-tax-britain-more-temping-as-75-fear-new-levies/",
+              "Tendencias de movilidad de capital hacia zonas premium frente al mar con infraestructuras planificadas.",
+            url: "https://example.com",
           },
           {
-            date: "3 Julio 2025",
+            date: "Febrero 2026",
             image: "/assets/imagenes/news_3.png",
-            alt: "Gulf News - Wynn Resort",
-            source: "Gulf News",
-            title: "Ras Al Khaimah sees new luxury hotel at Wynn Al Marjan",
+            alt: "Marina & Hospitality Report - Signature Boulevard",
+            source: "Marina & Hospitality Report",
+            title: "Signature Boulevard: retail y hospitality en primera línea",
             summary:
-              "Features 'UAE's first gaming resort – the $5.1 billion Wynn Al Marjan Island resort' launching in early 2027 with 'ultra-luxury offering, Enclave.'",
-            url: "https://gulfnews.com/business/tourism/uaes-first-gaming-resort-ras-al-khaimah-sees-new-luxury-hotel-at-wynn-al-marjan-1.500185592",
+              "Cómo el mix de retail, hotelería y ocio eleva la demanda residencial y la ocupación turística.",
+            url: "https://example.com",
           },
           {
-            date: "30 Abril 2025",
+            date: "Enero 2026",
             image: "/assets/imagenes/news_4.png",
-            alt: "The National - Gaming resort RAK",
-            source: "The National",
-            title:
-              "UAE's first gaming resort set to 'open up RAK to the world'",
+            alt: "Coastal Economics - Infrastructure impact",
+            source: "Coastal Economics",
+            title: "Infraestructura y apreciación: el ciclo del waterfront",
             summary:
-              "Explores the groundbreaking gaming resort's influence on regional economic development and tourism growth.",
-            url: "https://www.thenationalnews.com/business/economy/2025/04/30/uaes-first-casino-resort-set-to-open-up-ras-al-khaimah-to-the-world/",
+              "Guía de lectura para inversores: fases de apreciación antes y después de un gran hito urbano.",
+            url: "https://example.com",
           },
           {
-            date: "18 Marzo 2025",
+            date: "Noviembre 2025",
             image: "/assets/imagenes/news_5.png",
-            alt: "Arabian Business - Property prices",
-            source: "Arabian Business",
-            title: "Property prices rise 20% amid supply-demand gap",
+            alt: "Residential Market Insights - Supply & demand",
+            source: "Residential Market Insights",
+            title:
+              "Oferta vs demanda: por qué suben los alquileres en zonas prime",
             summary:
-              "Waterfront properties near the Wynn Resort in RAK are in hottest demand, with studios and one-bedroom units leading the surge.",
-            url: "https://www.arabianbusiness.com/industries/real-estate/ras-al-khaimah-real-estate-property-prices-sise-20-amid-growing-supply-demand-gap",
+              "Factores que explican el incremento de alquileres en productos turnkey frente al mar (análisis ilustrativo).",
+            url: "https://example.com",
           },
         ],
       },
@@ -720,94 +718,94 @@ export default function PlayaVivaLanding() {
       },
       investment: {
         title: "Oportunidad de Inversión",
-        subtitle: "Rendimientos reales impulsados por el Efecto Wynn",
+        subtitle: "Rentabilidad impulsada por el Efecto Marina",
         description:
-          "Playa Viva representa una oportunidad única de inversión en Al Marjan Island, epicentro de la transformación inmobiliaria de Ras Al Khaimah. Con un plan de financiamiento flexible del 1% mensual y entrega en Q2 2026, posiciónese antes de la apertura del Wynn.",
+          "Azure Bay es un caso de estudio (proyecto ficticio) diseñado para ilustrar cómo se presenta un activo premium en un distrito costero emergente. Con un plan flexible del 1% mensual y entrega en Q3 2026, el posicionamiento se produce antes de la apertura de la Azure Grand Marina en primavera de 2027.",
         stats: [
           {
             icon: TrendingUp,
-            value: "7-8%",
-            label: "Rendimientos",
-            description: "Rendimientos actuales en Al Marjan Island",
+            value: "6–8%",
+            label: "Rentabilidad bruta objetivo",
+            description: "Proyección ilustrativa (según escenarios)",
           },
           {
             icon: TrendingUp,
-            value: "+50%",
-            label: "Incremento en alquileres",
-            description: "Entre Q1 2023 y Q1 2025",
+            value: "+32%",
+            label: "Impulso de demanda",
+            description: "Hasta el hito de primavera 2027",
           },
           {
             icon: Award,
-            value: "Q2 2026",
+            value: "Q3 2026",
             label: "Entrega del proyecto",
-            description: "12 meses antes de la apertura del Wynn",
+            description: "Antes del catalizador 2027",
           },
           {
             icon: DollarSign,
             value: "1%",
-            label: "Pago mensual durante 5 años",
-            description: "Plan de financiamiento flexible",
+            label: "Pago mensual",
+            description: "Durante 60 meses post‑entrega",
           },
         ],
         benefits: [
-          "Márgenes de beneficio operativo cercanos al 8%",
-          "Proximidad al Wynn Resort ($5.1B)",
-          "Completamente amueblados y con Smart Home",
-          "Potencial de apreciación después de la apertura de Wynn Resort",
+          "Catalizador de demanda: Azure Grand Marina (primavera 2027)",
+          "Unidades amuebladas + domótica (ejemplo de especificación)",
+          "Potencial de apreciación por consolidación del distrito costero",
+          "Estrategias de salida y sensibilidad de escenarios en el dossier",
         ],
       },
       leadForm: {
-        title: "Dossier de Inversión Exclusivo",
-        subtitle: "Análisis financiero completo y proyecciones del Efecto Wynn",
-        badge: "Dossier de Inversión Exclusivo",
-        intro: "Análisis financiero completo y proyecciones del Efecto Wynn",
+        title: "Dossier de Inversión (Demo)",
+        subtitle: "Escenarios financieros + proyecciones del Efecto Marina",
+        badge: "Portfolio Demo",
+        intro: "Escenarios ilustrativos y proyecciones del Efecto Marina",
         description:
-          "Acceda al análisis más completo de la inversión, con proyecciones de rentabilidad, planos arquitectónicos, especificaciones de alto nivel y el impacto financiero del emblemático Wynn Resort en Al Marjan Island. Forme parte de una comunidad exclusiva que anticipa las oportunidades antes que el resto del mercado.",
+          "Acceda a un dossier de ejemplo con proyecciones de rentabilidad, planos, tipologías y el impacto del catalizador urbano (Azure Grand Marina) sobre Azure Bay District. Caso de estudio creado por Anclora Cognitive Solutions (Anclora Nexus Group).",
         features: [
-          "Escenarios de rentabilidad y salida 2026-2032",
-          "Simulación de cashflow con el plan 1% mensual",
-          "Plano maestro, tipologías y memorias de calidades",
-          "Calendario de hitos, licencias y soporte postventa",
+          "Escenarios 2026–2032 y estrategias de salida",
+          "Simulación de cashflow con plan 1% mensual",
+          "Tipologías, planos y memorias de calidades (demo)",
+          "Calendario de hitos y automatización de seguimiento",
         ],
         form: {
           firstNamePlaceholder: "Nombre",
           lastNamePlaceholder: "Apellidos",
           emailPlaceholder: "Email",
-          ctaButton: "Descargar Dossier Exclusivo",
-          sending: "Personalizando dossier...",
+          ctaButton: "Descargar Dossier (Demo)",
+          sending: "Preparando tu dossier...",
           privacy:
-            "Usamos tus datos solo para enviar el dossier personalizado y activar la automatización descrita.",
+            "Usamos tus datos solo para personalizar el dossier demo y disparar la automatización descrita.",
           successMessage:
-            "Gracias, {{name}}. Tu dossier personalizado se está enviando a tu bandeja.",
+            "Gracias, {{name}}. Tu dossier demo se está enviando a tu bandeja.",
           errorMessage:
             "No pudimos completar el envío. Inténtalo de nuevo o contáctanos.",
         },
       },
       location: {
-        title: "Al Marjan Island",
-        subtitle: "El futuro de la vida de lujo en los EAU",
+        title: "Azure Bay District",
+        subtitle: "Un waterfront emergente con visión 2030",
         description:
-          "Situada en las costas de Ras Al Khaimah, Al Marjan Island es una nueva joya arquitectónica que redefine el concepto de vida de lujo. Esta isla sin igual combina belleza natural con sofisticación moderna.",
+          "Distrito costero planificado para combinar vida residencial premium, paseo marítimo, marina y retail. Ubicación omitida intencionalmente (caso de estudio/portfolio).",
         stats: [
           {
-            number: "4",
-            label: "Islas Únicas",
-            labelEn: "Unique Islands",
+            number: "9",
+            label: "Km de paseo marítimo",
+            labelEn: "Km of seafront promenade",
           },
           {
-            number: "7.8",
-            label: "Kilómetros de Playas Vírgenes",
-            labelEn: "Kilometers of Pristine Beaches",
-          },
-          {
-            number: "2.7",
-            label: "Millones SqM de Tierra Recuperada",
-            labelEn: "Million SqM of Reclaimed Land",
+            number: "2.3",
+            label: "Millones m² masterplan",
+            labelEn: "Million m² masterplan",
           },
           {
             number: "3",
-            label: "Hoteles de Clase Mundial Totalmente Operativos",
-            labelEn: "Fully Operational World-Class Hotels",
+            label: "Zonas de marina + retail",
+            labelEn: "Marina + retail zones",
+          },
+          {
+            number: "25",
+            label: "Min al aeropuerto (demo)",
+            labelEn: "Min to airport (demo)",
           },
         ],
       },
@@ -815,76 +813,76 @@ export default function PlayaVivaLanding() {
         eyebrow: "Preguntas estratégicas",
         title: "Preguntas Frecuentes",
         subtitle:
-          "Respuestas detalladas basadas en conversaciones con inversores internacionales.",
+          "Respuestas orientativas para un caso de estudio (portfolio).",
         highlights: [
-          "Información validada junto a marketing, legal y ventas",
-          "Datos actualizados trimestralmente según el avance comercial",
-          "Disponible en español e inglés bajo solicitud",
+          "Proyecto ficticio usado como ejemplo de servicio",
+          "Copy bilingüe + estructura de conversión",
+          "Automatización del lead magnet incluida en el flujo",
         ],
         cta: "Hablar con un especialista",
         questions: [
           {
-            question: "¿Qué es Playa Viva?",
+            question: "¿Qué es Azure Bay?",
             answer:
-              "Playa Viva es un desarrollo residencial de lujo en Al Marjan Island (Ras Al Khaimah, EAU) compuesto por tres torres con estudios y apartamentos amueblados de 1, 2 y 3 dormitorios orientados a la vida costera moderna.",
+              "Azure Bay es un complejo residencial ficticio creado como caso de estudio para mostrar cómo diseñamos una landing premium y una narrativa de inversión alrededor de un distrito costero emergente.",
           },
           {
             question: "¿Qué tipologías de apartamentos hay disponibles?",
             answer:
-              "Hay estudios y apartamentos de 1, 2 y 3 dormitorios que van de 30 a 170 m² (300-1.800 sq ft) con precios desde £150.000. Todas las residencias ofrecen planos abiertos, vistas panorámicas al mar, balcones privados y sistemas de smart home.",
+              "Estudios y unidades de 1, 2 y 3 dormitorios (ejemplo). El objetivo es ilustrar cómo se presenta cada tipología con beneficios claros, highlights y un encaje para distintos perfiles de inversor.",
           },
           {
-            question: "¿Qué amenidades ofrece Playa Viva?",
+            question: "¿Qué amenidades ofrece Azure Bay?",
             answer:
-              "Gimnasio de última generación, spa de lujo, piscinas interiores y exteriores, cine rooftop, áreas infantiles, playa privada, circuitos de jogging y ciclismo, canchas de tenis, retail en planta baja y concierge/seguridad 24/7.",
+              "Amenidades tipo resort (ejemplo): spa, piscinas interior/exterior, rooftop lounge, gimnasio, kids club, playa privada y servicios de concierge 24/7. El listado es configurable según el producto real.",
           },
           {
-            question: "¿Cuándo se entregará Playa Viva?",
+            question: "¿Cuándo se entregará Azure Bay?",
             answer:
-              "La finalización y entrega están previstas para el Q3 2026. Todas las unidades se entregarán totalmente amuebladas para ocupación inmediata o renta.",
+              "La entrega ilustrativa está fijada en Q3 2026, para posicionar al inversor antes del hito urbano principal: la apertura de Azure Grand Marina en primavera de 2027.",
           },
           {
             question: "¿Es una buena oportunidad de inversión?",
             answer:
-              "Sí. La proximidad al futuro Wynn Resort de $5.1B, las amenidades resort y el crecimiento acelerado de Al Marjan Island respaldan rentabilidades del 7-8% y una elevada apreciación de capital.",
+              "En este caso de estudio, el argumento de inversión se apoya en un catalizador urbano (marina + boulevard) que incrementa demanda y puede impulsar rentas y apreciación. El dossier demo incluye escenarios y sensibilidad.",
           },
           {
             question: "¿Quién es el desarrollador?",
             answer:
-              "Uniestate Properties, firma fundada en 1995 con 30 años de experiencia, más de 3.000 unidades entregadas y 3,5 millones de pies cuadrados desarrollados entre EAU y Reino Unido.",
+              "Azure Bay Development Group (ficticio). El objetivo es demostrar el servicio de Anclora Cognitive Solutions: diseño, copy, estructura de conversión y automatización de captación.",
           },
           {
             question: "¿Cómo funciona el plan de pagos?",
             answer:
-              "20% de entrada, 20% durante la construcción, 1% al entregar llaves y el 59% restante con pagos del 1% mensual durante cinco años. Uniestate ofrece financiación interna de aprobación ágil.",
+              "Ejemplo: 40% durante construcción antes de la entrega, y 60% post‑entrega con pagos del 1% mensual durante 60 meses. El plan se adapta a condiciones reales de cada promotor.",
           },
           {
             question: "¿Dónde está ubicado?",
             answer:
-              "En Al Marjan Island, Ras Al Khaimah, a 12 minutos del centro de RAK, 25 minutos de RAK Mall y 34 minutos del Aeropuerto Internacional de RAK, con acceso directo a la autopista hacia Dubái.",
+              "Ubicación omitida intencionalmente (portfolio). Se presenta como un distrito costero emergente en primera línea de playa, con un gran catalizador (Azure Grand Marina) previsto para 2027.",
           },
           {
             question: "¿Cuáles son las cuotas de servicio?",
             answer:
-              "Las cuotas de servicio se estiman en 18 AED por pie cuadrado.",
+              "En un caso real dependen de amenidades y operación. En el dossier demo se incluiría una estimación y el detalle de qué cubren (mantenimiento, seguridad, zonas comunes, etc.).",
           },
         ],
       },
     },
     en: {
       hero: {
-        title: "Playa Viva",
-        subtitle: "AL MARJAN ISLAND, RAS AL KHAIMAH",
+        title: "Azure Bay",
+        subtitle: "AZURE BAY • EMERGING COASTAL DISTRICT",
         description:
-          "Invest in beachfront luxury next to the new $5.1B Wynn Casino. 7-8% rental yields",
-        price: "Starting from £150,000",
+          "Portfolio case study: a fictional beachfront residential concept accelerated by the upcoming Azure Grand Marina (Spring 2027). Indicative projections.",
+        price: "Starting from £165,000",
         payment: "Pay Just 1% Per Month for 5 Years",
-        handover: "Handover June 2026",
+        handover: "Handover Q3 2026",
         cta1: "Download Dossier",
         cta2: "Book Now",
       },
       menu: {
-        wynnEffect: "The Wynn Effect",
+        wynnEffect: "The Marina Effect",
         investment: "Investment",
         features: "Features",
         gallery: "Gallery",
@@ -893,35 +891,35 @@ export default function PlayaVivaLanding() {
         faq: "FAQ",
       },
       wynnEffect: {
-        title: "The Wynn Effect",
-        subtitle: "The opportunity transforming Ras Al Khaimah",
+        title: "The Marina Effect",
+        subtitle: "The catalyst reshaping Azure Bay District",
         description:
-          "The $5.1 billion Wynn Resort & Casino will be the first casino in UAE history. Its 2027 opening is catalyzing historic appreciation in Al Marjan Island.",
+          "The upcoming Azure Grand Marina & Signature Boulevard (opening Spring 2027) is attracting capital, tourism, and new residential demand. Investors position ahead of the milestone to capture the full waterfront appreciation cycle.",
         stats: [
           {
             icon: TrendingUp,
-            value: "+50%",
-            label: "Rental increase",
-            sublabel: "Q1 2023 - Q1 2025",
+            value: "+32%",
+            label: "Demand uplift",
+            sublabel: "Indicative 2025–2027",
           },
           {
             icon: DollarSign,
-            value: "$5.1B",
-            label: "Wynn Resort Investment",
-            sublabel: "First casino in the UAE",
+            value: "€3.4B",
+            label: "District investment",
+            sublabel: "Marina + boulevard + retail",
           },
           {
             icon: Calendar,
-            value: "Q2 2027",
-            label: "Wynn Resort Opening",
-            sublabel: "Peak appreciation moment",
+            value: "Spring 2027",
+            label: "Marina opening",
+            sublabel: "Consolidation trigger",
           },
         ],
         urgency: {
-          title: "Why invest NOW?",
+          title: "Why position NOW?",
           description:
-            "Sophisticated investors are positioning themselves before the Wynn opens in 2027. Playa Viva delivers in Q2 2026, allowing you to capitalize on the full effect.",
-          countdown: "Delivery: Q2 2026 • Wynn opening: Q2 2027",
+            "Sophisticated investors move early, ahead of the marina launch and commercial promenade activation. Azure Bay delivers in Q3 2026, aligning you with the pre‑ and post‑launch window.",
+          countdown: "Delivery: Q3 2026 • Marina opening: Spring 2027",
         },
       },
       features: {
@@ -930,8 +928,8 @@ export default function PlayaVivaLanding() {
           title: "Development Structure",
           tagline: "Contemporary architecture facing the sea",
           description: [
-            "Three iconic towers combining timeless elegance with the coastal setting of Al Marjan Island.",
-            "Architectural design that maximizes panoramic views of the Arabian Gulf from every residence.",
+            "Three iconic towers combining timeless elegance with the coastal setting of Azure Bay District.",
+            "Architectural design that maximizes panoramic views of the open sea from every residence.",
           ],
           image: "/assets/imagenes/collage_estructura_en.png",
         },
@@ -966,9 +964,9 @@ export default function PlayaVivaLanding() {
             },
           ],
         },
-        // FEATURES_3: Playa Viva Views
+        // FEATURES_3: Azure Bay Views
         playaViva: {
-          title: "Playa Viva",
+          title: "Azure Bay",
           tagline: "Four perspectives of beachfront living",
           tabs: [
             {
@@ -1028,9 +1026,9 @@ export default function PlayaVivaLanding() {
       },
       gallery: {
         title: "The Project",
-        subtitle: "Exceptional architectural design in Al Marjan Island",
+        subtitle: "Exceptional architectural design in Azure Bay District",
         description:
-          "Explore the elegance and sophistication of Playa Viva through high-resolution renders and environmental photography.",
+          "Explore the elegance and sophistication of Azure Bay through high-resolution renders and environmental photography.",
       },
       apartments: {
         title: "Apartment Collection",
@@ -1047,7 +1045,7 @@ export default function PlayaVivaLanding() {
             highlights: [
               "Fully furnished with smart-home package and premium appliances",
               "Hotel-inspired bathroom wrapped in natural stone",
-              "Perfect for corporate leasing or a pied-à-terre in Ras Al Khaimah",
+              "Perfect for corporate leasing or a pied-à-terre in Azure Coast",
             ],
             parking: "Complimentary valet option for residents",
           },
@@ -1083,72 +1081,69 @@ export default function PlayaVivaLanding() {
             highlights: [
               "Owner's suite with spa bathroom and 6-metre walk-in wardrobe",
               "Maid's room with dedicated bathroom",
-              "180° views across the sea and Wynn Resort skyline",
+              "180° views across the sea and the Azure Grand Marina skyline",
             ],
             parking: "2 parking spaces included",
           },
         },
       },
       trust: {
-        title: "Backed by Real Estate Leaders",
-        subtitle: "Uniestate and trusted partners",
+        title: "Case Study (Portfolio)",
+        subtitle: "Premium landing + lead automation",
         description:
-          "Uniestate Properties is a trusted, established developer in the United Arab Emirates dating back to 1995. Uniestate UK is the agency chosen by Uniestate to market Playa Viva thanks to its extensive pedigree within the luxury real estate sector.",
-        partners: "Featured in regional media",
-        readMore: "Read full article",
+          "Fictional project created by Anclora Cognitive Solutions (Anclora Nexus Group) to showcase an end‑to‑end service: premium UI, bilingual copy, conversion structure and lead‑magnet automation (dossier).",
+        partners: "Mock coverage for narrative context",
+        readMore: "View example",
         articles: [
           {
-            date: "November 10, 2025",
+            date: "May 2026",
             image: "/assets/imagenes/news_1.png",
-            alt: "Hotel Management Network - Wynn Resorts Second Resort",
-            source: "Hotel Management Network",
-            title:
-              "Wynn Resorts reveals plans for second resort at Ras Al Khaimah",
+            alt: "Coastal Development Review - Azure Grand Marina",
+            source: "Coastal Development Review",
+            title: "Azure Grand Marina: the next waterfront hub",
             summary:
-              "Wynn Resorts announces plans for a second luxury resort in Ras Al Khaimah, reinforcing Al Marjan Island's positioning as a premium UAE destination.",
-            url: "https://www.hotelmanagement-network.com/news/wynn-resorts-marjan-second-resort/",
+              "Announcement of the marina, commercial boulevard and dining scene as the district catalyst.",
+            url: "https://example.com",
           },
           {
-            date: "November 7, 2025",
+            date: "April 2026",
             image: "/assets/imagenes/news_2.webp",
-            alt: "The National - Escape to Dubai",
-            source: "The National",
-            title:
-              "Escape to Dubai from high-tax Britain more tempting as 75% fear higher rates",
+            alt: "Global Wealth Digest - Coastal migration",
+            source: "Global Wealth Digest",
+            title: "Capital shifts towards emerging coastal districts",
             summary:
-              "Reports record migration of wealthy individuals to UAE, with the emirates experiencing 'a net inflow of 9,800 millionaires from around the world in the past year.'",
-            url: "https://www.thenationalnews.com/news/uae/2025/11/07/flight-to-dubai-from-high-tax-britain-more-temping-as-75-fear-new-levies/",
+              "Investor patterns favouring prime beachfront zones with planned infrastructure and hospitality.",
+            url: "https://example.com",
           },
           {
-            date: "July 3, 2025",
+            date: "February 2026",
             image: "/assets/imagenes/news_3.png",
-            alt: "Gulf News - Wynn Resort",
-            source: "Gulf News",
-            title: "Ras Al Khaimah sees new luxury hotel at Wynn Al Marjan",
+            alt: "Marina & Hospitality Report - Signature Boulevard",
+            source: "Marina & Hospitality Report",
+            title: "Signature Boulevard: retail & hospitality on the seafront",
             summary:
-              "Features 'UAE's first gaming resort – the $5.1 billion Wynn Al Marjan Island resort' launching in early 2027 with 'ultra-luxury offering, Enclave.'",
-            url: "https://gulfnews.com/business/tourism/uaes-first-gaming-resort-ras-al-khaimah-sees-new-luxury-hotel-at-wynn-al-marjan-1.500185592",
+              "How curated retail and leisure programmes boost residential demand and tourist occupancy.",
+            url: "https://example.com",
           },
           {
-            date: "April 30, 2025",
+            date: "January 2026",
             image: "/assets/imagenes/news_4.png",
-            alt: "The National - Gaming resort RAK",
-            source: "The National",
-            title:
-              "UAE's first gaming resort set to 'open up RAK to the world'",
+            alt: "Coastal Economics - Infrastructure impact",
+            source: "Coastal Economics",
+            title: "Infrastructure and appreciation: the waterfront cycle",
             summary:
-              "Explores the groundbreaking gaming resort's influence on regional economic development and tourism growth.",
-            url: "https://www.thenationalnews.com/business/economy/2025/04/30/uaes-first-casino-resort-set-to-open-up-ras-al-khaimah-to-the-world/",
+              "Investor lens: the pre‑ and post‑milestone appreciation phases around major urban catalysts.",
+            url: "https://example.com",
           },
           {
-            date: "March 18, 2025",
+            date: "November 2025",
             image: "/assets/imagenes/news_5.png",
-            alt: "Arabian Business - Property prices",
-            source: "Arabian Business",
-            title: "Property prices rise 20% amid supply-demand gap",
+            alt: "Residential Market Insights - Supply & demand",
+            source: "Residential Market Insights",
+            title: "Supply vs demand: why rents rise in prime turnkey products",
             summary:
-              "Waterfront properties near the Wynn Resort in RAK are in hottest demand, with studios and one-bedroom units leading the surge.",
-            url: "https://www.arabianbusiness.com/industries/real-estate/ras-al-khaimah-real-estate-property-prices-sise-20-amid-growing-supply-demand-gap",
+              "Illustrative analysis of rental pressure drivers for furnished beachfront residences.",
+            url: "https://example.com",
           },
         ],
       },
@@ -1229,152 +1224,152 @@ export default function PlayaVivaLanding() {
       },
       investment: {
         title: "Investment Opportunity",
-        subtitle: "Real yields driven by the Wynn Effect",
+        subtitle: "Returns accelerated by the Marina Effect",
         description:
-          "Playa Viva represents a unique investment opportunity in Al Marjan Island, the epicenter of Ras Al Khaimah's real estate transformation. With a flexible 1% monthly financing plan and Q2 2026 delivery, position yourself before the Wynn opening.",
+          "Azure Bay is a portfolio case study (fictional project) designed to showcase how a premium waterfront asset is positioned within an emerging coastal district. With a flexible 1% monthly plan and Q3 2026 handover, the timing aligns ahead of the Azure Grand Marina opening in Spring 2027.",
         stats: [
           {
             icon: TrendingUp,
-            value: "7-8%",
-            label: "Gross rental yields",
-            description: "Current yields in Al Marjan Island",
+            value: "6–8%",
+            label: "Target gross yield",
+            description: "Illustrative projection (scenario‑based)",
           },
           {
             icon: TrendingUp,
-            value: "+50%",
-            label: "Rental increase",
-            description: "Between Q1 2023 and Q1 2025",
+            value: "+32%",
+            label: "Demand uplift",
+            description: "Into the Spring 2027 milestone",
           },
           {
             icon: Award,
-            value: "Q2 2026",
-            label: "Project delivery",
-            description: "12 months before Wynn opens",
+            value: "Q3 2026",
+            label: "Project handover",
+            description: "Ahead of the 2027 catalyst",
           },
           {
             icon: DollarSign,
             value: "1%",
-            label: "Monthly payment for 5 years",
-            description: "Flexible financing plan",
+            label: "Monthly payment",
+            description: "For 60 months post‑handover",
           },
         ],
         benefits: [
-          "Operating profit margins close to 8%",
-          "Proximity to Wynn Resort ($5.1B)",
-          "Fully furnished and with Smart Home",
-          "Potential for appreciation after opening of Wynn Resort",
+          "Demand catalyst: Azure Grand Marina (Spring 2027)",
+          "Turnkey furnishing + smart home (sample spec)",
+          "Appreciation potential as the district consolidates",
+          "Exit strategies and scenario sensitivity in the dossier",
         ],
       },
       leadForm: {
-        title: "Exclusive Investment Dossier",
-        subtitle: "Complete financial analysis and Wynn Effect projections",
-        badge: "Exclusive Investment Dossier",
-        intro: "Comprehensive financial analysis and Wynn Effect projections",
+        title: "Investment Dossier (Demo)",
+        subtitle: "Financial scenarios + Marina Effect projections",
+        badge: "Portfolio Demo",
+        intro: "Illustrative scenarios and Marina Effect projections",
         description:
-          "Access the most complete investment analysis with profitability projections, architectural plans, specification sheets, and the financial impact of the emblematic Wynn Resort on Al Marjan Island. Join an exclusive community that anticipates opportunities ahead of the market.",
+          "Access a sample dossier with return scenarios, layouts, specs and the projected impact of the urban catalyst (Azure Grand Marina) on Azure Bay District. Portfolio case study built by Anclora Cognitive Solutions (Anclora Nexus Group).",
         features: [
-          "2026-2032 return scenarios and exit strategies",
-          "Cash-flow simulation with the 1% monthly plan",
-          "Masterplan, unit typologies, and delivered specs",
-          "Milestone calendar, permits, and after-sales support",
+          "2026–2032 scenarios and exit strategies",
+          "Cash‑flow simulation with the 1% monthly plan",
+          "Masterplan, typologies and delivered specs (demo)",
+          "Milestone calendar + follow‑up automation",
         ],
         form: {
           firstNamePlaceholder: "First name",
           lastNamePlaceholder: "Last name",
           emailPlaceholder: "Email",
-          ctaButton: "Download Exclusive Dossier",
+          ctaButton: "Download Dossier (Demo)",
           sending: "Preparing your dossier...",
           privacy:
-            "We only use your details to personalize the dossier and trigger the described automation.",
+            "We only use your details to personalise the demo dossier and trigger the described automation.",
           successMessage:
-            "Thank you, {{name}}. Your personalized dossier is on its way to your inbox.",
+            "Thank you, {{name}}. Your demo dossier is on its way to your inbox.",
           errorMessage:
-            "We couldn't finalize the send. Please try again or contact our team.",
+            "We couldn't finalise the send. Please try again or contact our team.",
         },
       },
       location: {
-        title: "Al Marjan Island",
-        subtitle: "The future of luxury living in the UAE",
+        title: "Azure Bay District",
+        subtitle: "An emerging waterfront vision for 2030",
         description:
-          "Located on the coast of Ras Al Khaimah, Al Marjan Island is a new architectural jewel that redefines the concept of luxury living. This unparalleled island combines natural beauty with modern sophistication.",
+          "A masterplanned coastal district combining premium residential living, a seafront promenade, marina infrastructure and curated retail. Location intentionally omitted (portfolio case study).",
         stats: [
           {
-            number: "4",
-            label: "Islas Únicas",
-            labelEn: "Unique Islands",
+            number: "9",
+            label: "Km de paseo marítimo",
+            labelEn: "Km of seafront promenade",
           },
           {
-            number: "7.8",
-            label: "Kilómetros de Playas Vírgenes",
-            labelEn: "Kilometers of Pristine Beaches",
-          },
-          {
-            number: "2.7",
-            label: "Millones SqM de Tierra Recuperada",
-            labelEn: "Million SqM of Reclaimed Land",
+            number: "2.3",
+            label: "Millones m² masterplan",
+            labelEn: "Million m² masterplan",
           },
           {
             number: "3",
-            label: "Hoteles de Clase Mundial Totalmente Operativos",
-            labelEn: "Fully Operational World-Class Hotels",
+            label: "Zonas de marina + retail",
+            labelEn: "Marina + retail zones",
+          },
+          {
+            number: "25",
+            label: "Min al aeropuerto (demo)",
+            labelEn: "Min to airport (demo)",
           },
         ],
       },
       faq: {
         eyebrow: "Strategic Questions",
         title: "Frequently Asked Questions",
-        subtitle:
-          "Detailed answers based on conversations with international investors",
+        subtitle: "Indicative answers for a portfolio case study.",
         highlights: [
-          "Information validated alongside marketing, legal, and sales",
-          "Data updated quarterly according to commercial progress",
-          "Available in Spanish and English upon request",
+          "Fictional project used as a service example",
+          "Bilingual copy + conversion structure",
+          "Lead‑magnet automation included in the flow",
         ],
-        cta: "Speak with a specialist",
+        cta: "Speak to a specialist",
         questions: [
           {
-            question: "What is Playa Viva?",
+            question: "What is Azure Bay?",
             answer:
-              "Playa Viva is a luxury residential development on Al Marjan Island, Ras Al Khaimah. Three elegant towers offer fully furnished studios plus 1, 2, and 3-bedroom apartments tailored to contemporary beachfront living.",
+              "Azure Bay is a fictional residential concept built as a portfolio case study to showcase a premium landing page and an investment narrative around an emerging coastal district.",
           },
           {
             question: "What types of apartments are available?",
             answer:
-              "Studios plus 1, 2, and 3-bedroom apartments ranging from 300 to 1,800 sq. ft. with starting prices from £150,000. Every residence features open layouts, panoramic sea views, private balconies, and integrated smart-home systems.",
+              "Studios and 1, 2 and 3‑bed layouts (illustrative). The goal is to demonstrate how each typology is positioned with clear benefits, highlights and fit for different investor profiles.",
           },
           {
-            question: "What amenities does Playa Viva offer?",
+            question: "What amenities does Azure Bay offer?",
             answer:
-              "A state-of-the-art fitness center, luxury spa, indoor and outdoor pools, rooftop cinema, children's play areas, private beach access, jogging and cycling tracks, tennis courts, ground-floor retail, and 24/7 concierge and security.",
+              "Resort‑style amenities (illustrative): spa, indoor/outdoor pools, rooftop lounge, gym, kids club, private beach and 24/7 concierge. The list is configurable per real product.",
           },
           {
-            question: "When will Playa Viva be completed?",
+            question: "When will Azure Bay be completed?",
             answer:
-              "Completion and handover are scheduled for Q3 2026. All apartments will be delivered fully furnished and ready for immediate occupancy or rental.",
+              "Illustrative delivery is set to Q3 2026, positioning investors ahead of the key urban milestone: the Azure Grand Marina opening in Spring 2027.",
           },
           {
-            question: "Is Playa Viva a good investment opportunity?",
+            question: "Is Azure Bay a good investment opportunity?",
             answer:
-              "Yes. Its prime location beside the upcoming $5.1B Wynn Resort & Casino, resort-grade amenities, and the rapid growth of Al Marjan Island support 7-8% rental yields and compelling capital appreciation.",
+              "In this case study, the investment argument is driven by an urban catalyst (marina + boulevard) that can lift demand, rents and capital appreciation. The demo dossier includes scenarios and sensitivity.",
           },
           {
-            question: "Who is the developer of Playa Viva?",
+            question: "Who is the developer of Azure Bay?",
             answer:
-              "Uniestate Properties develops Playa Viva. Established in 1995, the developer has 30 years of experience, more than 3,000 delivered units across 3.5 million sq. ft., and over 50,000 satisfied clients.",
+              "Azure Bay Development Group (fictional). The objective is to showcase Anclora Cognitive Solutions’ service: design, copy, conversion structure and lead automation.",
           },
           {
             question: "What are the payment terms?",
             answer:
-              "A flexible structure with 20% down payment, 20% during construction, 1% at handover, and the remaining 59% through convenient 1% monthly payments over five years via Uniestate's in-house financing.",
+              "Example: 40% during construction before handover, and 60% post‑handover via 1% monthly payments across 60 months. The structure is adapted to each developer’s real terms.",
           },
           {
-            question: "Where is Playa Viva located?",
+            question: "Where is Azure Bay located?",
             answer:
-              "On Al Marjan Island in Ras Al Khaimah, 12 minutes from RAK Central, 25 minutes from RAK Mall, and 34 minutes from RAK International Airport, with direct highway access to Dubai.",
+              "Location is intentionally omitted (portfolio). It is presented as a beachfront district in expansion, supported by a major catalyst (Azure Grand Marina) planned for 2027.",
           },
           {
-            question: "What are the service fees at Playa Viva?",
-            answer: "Service fees are charged at AED 18 per square foot.",
+            question: "What are the service fees at Azure Bay?",
+            answer:
+              "In real projects they depend on amenities and operations. In the demo dossier we would include an estimate and a clear breakdown of what the fees cover.",
           },
         ],
       },
