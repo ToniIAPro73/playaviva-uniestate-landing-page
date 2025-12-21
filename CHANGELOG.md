@@ -6,6 +6,56 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.1.0] - 2025-12-21
+
+### 🔗 Domain Migration Update
+
+#### Changed
+
+**Project Domain**
+- ✅ Updated SITE_URL from "https://meridian-coastal-group.vercel.app" to "https://azurebay-meridian.vercel.app"
+- ✅ Updated all documentation references
+- ✅ Updated .env.example template
+- ✅ Updated README.md deployment URLs
+- ✅ Updated app/page.tsx SITE_URL constant
+
+**Files Modified**
+- `app/page.tsx` - SITE_URL constant
+- `README.md` - Deployment links and examples
+- `.env.example` - NEXT_PUBLIC_SITE_URL value
+- `CHANGELOG.md` - This entry
+
+#### Breaking Changes
+
+⚠️ **Domain Update**
+- Old: https://meridian-coastal-group.vercel.app
+- New: https://azurebay-meridian.vercel.app
+- Action: Update all bookmarks, links, and environment variables
+
+#### 🚀 Migration Checklist
+
+If upgrading from v1.0.0:
+
+1. **Update Environment**
+   ```bash
+   # Update .env.local with new domain
+   NEXT_PUBLIC_SITE_URL=https://azurebay-meridian.vercel.app
+   ```
+
+2. **Verify Deployment**
+   - Redeploy on Vercel with updated URL
+   - Update custom domain if applicable
+
+3. **Update Bookmarks & Links**
+   - All external references should point to azurebay-meridian.vercel.app
+   - Update DNS records if using custom domain
+
+4. **Verify Lead Automation**
+   - Test lead submission flow with new domain
+   - Confirm SITE_URL is used in lead tracking
+
+---
+
 ## [1.0.0] - 2025-12-21
 
 ### 🌟 Major: Complete Branding Update - Meridian Coastal Group
@@ -241,7 +291,7 @@ For issues, questions, or suggestions:
 
 📧 **Contact**: [Your Contact Info]  
 🔗 **Repository**: https://github.com/ToniIAPro73/v0-landing-page-real-state  
-🌐 **Live Demo**: https://meridian-coastal-group.vercel.app
+🌐 **Live Demo**: https://azurebay-meridian.vercel.app
 
 ---
 
