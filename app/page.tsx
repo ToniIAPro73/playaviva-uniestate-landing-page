@@ -1,4 +1,4 @@
-"use client";
+use client";
 
 import { useState, useEffect, useRef, FormEvent } from "react";
 import Head from "next/head";
@@ -62,7 +62,7 @@ declare global {
   }
 }
 
-const SITE_URL = "https://meridian-coastal-group.vercel.app";
+const SITE_URL = "https://azurebay-meridian.vercel.app";
 
 type LeadAutomationPayload = {
   firstName: string;
