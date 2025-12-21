@@ -744,7 +744,7 @@ export default function PlayaVivaLanding() {
             icon: DollarSign,
             value: "1%",
             label: "Pago mensual",
-            description: "Durante 60 meses post‑entrega",
+            description: "Durante 60 meses post‐entrega",
           },
         ],
         benefits: [
@@ -854,7 +854,7 @@ export default function PlayaVivaLanding() {
           {
             question: "¿Cómo funciona el plan de pagos?",
             answer:
-              "Ejemplo: 40% durante construcción antes de la entrega, y 60% post‑entrega con pagos del 1% mensual durante 60 meses. El plan se adapta a condiciones reales de cada promotor.",
+              "Ejemplo: 40% durante construcción antes de la entrega, y 60% post‐entrega con pagos del 1% mensual durante 60 meses. El plan se adapta a condiciones reales de cada promotor.",
           },
           {
             question: "¿Dónde está ubicado?",
@@ -918,7 +918,7 @@ export default function PlayaVivaLanding() {
         urgency: {
           title: "Why position NOW?",
           description:
-            "Sophisticated investors move early, ahead of the marina launch and commercial promenade activation. Azure Bay delivers in Q3 2026, aligning you with the pre‑ and post‑launch window.",
+            "Sophisticated investors move early, ahead of the marina launch and commercial promenade activation. Azure Bay delivers in Q3 2026, aligning you with the pre‐ and post‐launch window.",
           countdown: "Delivery: Q3 2026 • Marina opening: Spring 2027",
         },
       },
@@ -1091,7 +1091,7 @@ export default function PlayaVivaLanding() {
         title: "Case Study (Portfolio)",
         subtitle: "Premium landing + lead automation",
         description:
-          "Fictional project created by Anclora Cognitive Solutions (Anclora Nexus Group) to showcase an end‑to‑end service: premium UI, bilingual copy, conversion structure and lead‑magnet automation (dossier).",
+          "Fictional project created by Anclora Cognitive Solutions (Anclora Nexus Group) to showcase an end‐to‐end service: premium UI, bilingual copy, conversion structure and lead‐magnet automation (dossier).",
         partners: "Mock coverage for narrative context",
         readMore: "View example",
         articles: [
@@ -1132,7 +1132,7 @@ export default function PlayaVivaLanding() {
             source: "Coastal Economics",
             title: "Infrastructure and appreciation: the waterfront cycle",
             summary:
-              "Investor lens: the pre‑ and post‑milestone appreciation phases around major urban catalysts.",
+              "Investor lens: the pre‐ and post‐milestone appreciation phases around major urban catalysts.",
             url: "https://example.com",
           },
           {
@@ -1232,7 +1232,7 @@ export default function PlayaVivaLanding() {
             icon: TrendingUp,
             value: "6–8%",
             label: "Target gross yield",
-            description: "Illustrative projection (scenario‑based)",
+            description: "Illustrative projection (scenario‐based)",
           },
           {
             icon: TrendingUp,
@@ -1250,7 +1250,7 @@ export default function PlayaVivaLanding() {
             icon: DollarSign,
             value: "1%",
             label: "Monthly payment",
-            description: "For 60 months post‑handover",
+            description: "For 60 months post‐handover",
           },
         ],
         benefits: [
@@ -1269,9 +1269,9 @@ export default function PlayaVivaLanding() {
           "Access a sample dossier with return scenarios, layouts, specs and the projected impact of the urban catalyst (Azure Grand Marina) on Azure Bay District. Portfolio case study built by Anclora Cognitive Solutions (Anclora Nexus Group).",
         features: [
           "2026–2032 scenarios and exit strategies",
-          "Cash‑flow simulation with the 1% monthly plan",
+          "Cash‐flow simulation with the 1% monthly plan",
           "Masterplan, typologies and delivered specs (demo)",
-          "Milestone calendar + follow‑up automation",
+          "Milestone calendar + follow‐up automation",
         ],
         form: {
           firstNamePlaceholder: "First name",
@@ -1322,7 +1322,7 @@ export default function PlayaVivaLanding() {
         highlights: [
           "Fictional project used as a service example",
           "Bilingual copy + conversion structure",
-          "Lead‑magnet automation included in the flow",
+          "Lead‐magnet automation included in the flow",
         ],
         cta: "Speak to a specialist",
         questions: [
@@ -1334,12 +1334,12 @@ export default function PlayaVivaLanding() {
           {
             question: "What types of apartments are available?",
             answer:
-              "Studios and 1, 2 and 3‑bed layouts (illustrative). The goal is to demonstrate how each typology is positioned with clear benefits, highlights and fit for different investor profiles.",
+              "Studios and 1, 2 and 3‐bed layouts (illustrative). The goal is to demonstrate how each typology is positioned with clear benefits, highlights and fit for different investor profiles.",
           },
           {
             question: "What amenities does Azure Bay offer?",
             answer:
-              "Resort‑style amenities (illustrative): spa, indoor/outdoor pools, rooftop lounge, gym, kids club, private beach and 24/7 concierge. The list is configurable per real product.",
+              "Resort‐style amenities (illustrative): spa, indoor/outdoor pools, rooftop lounge, gym, kids club, private beach and 24/7 concierge. The list is configurable per real product.",
           },
           {
             question: "When will Azure Bay be completed?",
@@ -1359,7 +1359,7 @@ export default function PlayaVivaLanding() {
           {
             question: "What are the payment terms?",
             answer:
-              "Example: 40% during construction before handover, and 60% post‑handover via 1% monthly payments across 60 months. The structure is adapted to each developer's real terms.",
+              "Example: 40% during construction before handover, and 60% post‐handover via 1% monthly payments across 60 months. The structure is adapted to each developer's real terms.",
           },
           {
             question: "Where is Azure Bay located?",
@@ -2172,9 +2172,9 @@ export default function PlayaVivaLanding() {
                 </div>
               </div>
 
-              {/* Description - Sophisticated styling and legibility */}
+              {/* Description - Multi-line support with improved formatting */}
               <div
-                className="transition-all ease-out max-w-5xl"
+                className="transition-all ease-out max-w-4xl px-2"
                 style={{
                   opacity: animationStates.description ? 1 : 0,
                   transform: animationStates.description
@@ -2186,8 +2186,8 @@ export default function PlayaVivaLanding() {
                   transitionDuration: "2000ms",
                 }}
               >
-                <div className="hero-description relative mx-auto px-2">
-                  <p className="relative text-[#FFFFFF] text-sm sm:text-base md:text-lg font-medium px-3 sm:px-6 py-2 sm:py-3 tracking-[0.01em] text-center whitespace-nowrap [@media(max-width:768px)]:whitespace-normal">
+                <div className="hero-description relative mx-auto">
+                  <p className="relative text-[#FFFFFF] text-xs sm:text-sm md:text-base font-medium leading-relaxed tracking-[0.01em] text-center">
                     {t.hero.description}
                   </p>
                 </div>
