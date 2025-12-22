@@ -123,11 +123,9 @@ git branch
 # perplexity/feat ← aquí estoy
 
 # Hago cambios
-echo "// Azure Bay updates" >> app/page.tsx
 
 # Commit atómico
 git add app/page.tsx
-git commit -m "[Azure Bay] Replace project name: Playa Viva → Azure Bay Residences"
 ```
 
 #### PASO 2: Yo creo PR a tu development
@@ -136,7 +134,6 @@ git commit -m "[Azure Bay] Replace project name: Playa Viva → Azure Bay Reside
 gh pr create \
   --base development \
   --head perplexity/feat \
-  --title "[Azure Bay] Rebranding - Batch 1: Naming" \
   --body "Changes implemented:
   - Replaced project name
   - Updated location references
@@ -215,12 +212,9 @@ main
 
 ```
 ⏱️ T+0min: Yo comienzo en perplexity/feat
-  └─ Find & Replace: "Playa Viva" → "Azure Bay"
   └─ Actualizar ubicación
-  └─ Commit: "[Azure Bay] Replace project name"
 
 ⏱️ T+15min: Creo PR a development
-  └─ PR Title: "[Azure Bay] Naming - Batch 1"
   └─ PR Description: Detallado
   └─ Estado: "Ready for review"
 
@@ -301,7 +295,6 @@ git checkout main && git merge perplexity/feat  # ← NO
 ### 3. **PRs como comunicación**
 ```bash
 # ✅ Cada batch de cambios = 1 PR
-git commit -m "[Azure Bay] Batch 1: Naming & Location"
 gh pr create --base development --head perplexity/feat
 
 # ❌ Muchos commits sin PR

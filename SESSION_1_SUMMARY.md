@@ -151,13 +151,11 @@ Idiomas: Todo bilingüe (ES/EN) - requiere cambios paralelos
 Opciones:
 
 ```
-1. ⭐⭐⭐⭐⭐ AZURE BAY RESIDENCES (Mi recomendación)
 2. ⭐⭐⭐⭐ SAPPHIRE COAST
 3. ⭐⭐⭐⭐ MERIDIAN SHORES
 4. Otra opción (dame el nombre)
 ```
 
-**Si no decides, usar por default**: AZURE BAY RESIDENCES
 
 ### PASO 2: Preparar Midjourney
 
@@ -181,7 +179,6 @@ Opciones:
 **Opciones**:
 
 ```
-- azure-bay.vercel.app (si usamos Azure Bay)
 - sapphire-coast.vercel.app (si usamos Sapphire Coast)
 - anon-luxury-landing.vercel.app (temporal/neutro)
 - [tu-propio-dominio].com (si tienes)
@@ -343,7 +340,6 @@ AHORA: Sesión 1 ✅
 
 ```
 1 Landing (Playa Viva original)
-   + 1 Nombre nuevo (Azure Bay, etc.)
    + 30 imágenes AI-generated
    + 150+ reemplazos de texto
    + 2-3 horas ejecución
