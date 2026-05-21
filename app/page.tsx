@@ -6,6 +6,7 @@ import Script from "next/script";
 import Image from "next/image";
 import HubSpotScript from "./HubSpotScript";
 import { Button } from "@/components/ui/button";
+import { SiteFooter } from "./LegalChrome";
 import {
   Globe,
   MapPin,
@@ -4025,6 +4026,7 @@ export default function PlayaVivaLanding() {
           </div>
         </div>
       </section>
+      <SiteFooter language={language} />
     </div>
   );
 }
