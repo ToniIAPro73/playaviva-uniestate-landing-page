@@ -14,16 +14,16 @@ export default function Head() {
       </title>
       <link
         rel="icon"
-        href="/favicon_playa_viva.png"
+        href="/favicon_playa_viva_1.png"
         type="image/png"
         sizes="512x512"
       />
       <link
         rel="apple-touch-icon"
-        href="/favicon_playa_viva.png"
+        href="/favicon_playa_viva_1.png"
         type="image/png"
       />
-      <link rel="shortcut icon" href="/favicon_playa_viva.png" />
+      <link rel="shortcut icon" href="/favicon_playa_viva_1.png" />
     </>
   );
 }

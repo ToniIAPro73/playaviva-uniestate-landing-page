@@ -1,5 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
+import { CookieConsent } from "@/components/cookie-consent";
+import { LegalFooter } from "@/components/legal-footer";
 import "./globals.css";
 
 const siteUrl = "https://playaviva-uniestate.vercel.app";
@@ -43,9 +45,9 @@ export const metadata: Metadata = {
     images: ["/assets/imagenes/hero-image.webp"],
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/favicon_playa_viva_1.png",
+    shortcut: "/favicon_playa_viva_1.png",
+    apple: "/favicon_playa_viva_1.png",
   },
 };
 
@@ -76,6 +78,8 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`} translate="no" suppressHydrationWarning>
         {children}
+        <LegalFooter />
+        <CookieConsent />
       </body>
     </html>
   );
