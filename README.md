@@ -1,40 +1,86 @@
-# Playa Viva landing page
+<!-- markdownlint-disable MD001 MD013 MD033 MD041 MD060 -->
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+<div align="center">
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/pmi140979-6354s-projects/v0-landing-page-real-state)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/lUsLj88yELz)
+<img src="./public/icon.svg" alt="Anclora Playa Viva Uniestate" width="120" />
 
-## Overview
+# Anclora Playa Viva Uniestate
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+### Producto del ecosistema Anclora documentado como repositorio publico de familia portfolio_showcase
 
-## Deployment
+**Español** · [English](./README.en.md)
 
-Your project is live at:
+<br />
 
-**[https://vercel.com/pmi140979-6354s-projects/v0-landing-page-real-state](https://vercel.com/pmi140979-6354s-projects/v0-landing-page-real-state)**
+![Anclora](https://img.shields.io/badge/Anclora-ecosystem-111827)
+![Documentation](https://img.shields.io/badge/documentation-premium-BFA46A)
+![Languages](https://img.shields.io/badge/languages-ES%20%7C%20EN-047857)
 
-## Build your app
+</div>
 
-Continue building your app on:
+---
 
-**[https://v0.app/chat/lUsLj88yELz](https://v0.app/chat/lUsLj88yELz)**
+> [!IMPORTANT]
+> Repositorio publico reducido. Describe el producto y su arquitectura conceptual; no expone logica operativa, secretos ni datos reales.
 
-## How It Works
+## Vista rapida
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+| Problema | Respuesta de producto |
+| --- | --- |
+| Contexto disperso | Experiencia guiada y trazable |
+| Datos sensibles | Privacidad por diseno y minimizacion |
+| Decision compleja | Flujo conceptual claro y revisable |
+| Operacion profesional | Arquitectura modular y controles de calidad |
 
-## UX/UI Contracts
+## Flujo conceptual
 
-Read these before changing interface components:
+```text
+Entrada de usuario / evidencia
+        ↓
+Validacion y normalizacion
+        ↓
+Flujo de producto
+        ↓
+Revision o resultado explicable
+        ↓
+Salida profesional / siguiente accion
+```
 
-1. `docs/standards/ANCLORA_ECOSYSTEM_CONTRACT_GROUPS.md`
-2. `docs/standards/ANCLORA_PORTFOLIO_SHOWCASE_CONTRACT.md`
-3. `docs/standards/UI_MOTION_CONTRACT.md`
-4. `docs/standards/MODAL_CONTRACT.md`
-5. `docs/standards/LOCALIZATION_CONTRACT.md`
+## Que muestra este repositorio
+
+Producto del ecosistema Anclora documentado como repositorio publico de familia portfolio_showcase.
+
+El README presenta el alcance publico del producto, su posicionamiento dentro del ecosistema
+Anclora y los limites de exposicion adecuados para un repositorio abierto.
+
+## Tecnologia
+
+| Area | Detalle |
+| --- | --- |
+| Next.js | Presente en el repositorio |
+| React | Presente en el repositorio |
+| TypeScript | Presente en el repositorio |
+| Tailwind CSS | Presente en el repositorio |
+| Zod | Presente en el repositorio |
+| Vitest | Presente en el repositorio |
+
+## Documentacion
+
+- [Documentacion](./docs)
+
+## Marca
+
+- Producto canonico: `anclora-playa-viva-uniestate`
+- Familia: `portfolio_showcase`
+- Visibilidad objetivo: `public`
+- Asset de marca: `presente`
+
+---
+
+<div align="center">
+
+### Antonio Ballesteros · Anclora Group
+
+Software, IA generativa y automatizacion para productos digitales trazables.
+
+</div>
