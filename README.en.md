@@ -2,58 +2,41 @@
 
 <div align="center">
 
-<img src="./public/icon.svg" alt="Anclora Playa Viva Uniestate" width="120" />
+<img src="./public/icon.svg" alt="Playa Viva Uniestate" width="120" />
 
-# Anclora Playa Viva Uniestate
+# Playa Viva Uniestate Landing Page
 
-### Producto del ecosistema Anclora documentado como repositorio publico de familia portfolio_showcase
+### Historical preserved project
 
 [Español](./README.md) · **English**
-
-<br />
-
-![Anclora](https://img.shields.io/badge/Anclora-ecosystem-111827)
-![Documentation](https://img.shields.io/badge/documentation-premium-BFA46A)
-![Languages](https://img.shields.io/badge/languages-ES%20%7C%20EN-047857)
 
 </div>
 
 ---
 
-> [!IMPORTANT]
-> Reduced public repository. It describes the product and conceptual architecture; it does not expose operational logic, secrets or real data.
+> [!NOTE]
+> This repository contains one of Antonio Ballesteros' early landing-page projects and is retained as a historical and learning reference.
+> It is not an active Anclora Group product, a project in the current commercial portfolio, or an AOS-managed application.
 
-## At a glance
+## Project status
 
-| Product challenge | Product response |
-| --- | --- |
-| Fragmented context | Guided and traceable experience |
-| Sensitive data | Privacy by design and minimisation |
-| Complex decision | Clear and reviewable conceptual flow |
-| Professional operation | Modular architecture and quality controls |
+- Status: historical / preserved
+- Current purpose: technical and learning reference
+- Active development: no
+- Active Anclora product: no
+- Active commercial portfolio project: no
+- AOS management: no
+- Active deployment: no
 
-## Conceptual workflow
+## What it is
 
-```text
-User input / evidence
-        ↓
-Validation and normalisation
-        ↓
-Product workflow
-        ↓
-Review or explainable result
-        ↓
-Professional output / next action
-```
+A first landing page and web-learning project, retained as a reference for technical evolution and the experience gained. The experience gained with this project later informed other fictional portfolio and landing-page exercises.
 
-## What this repository shows
-
-Producto del ecosistema Anclora documentado como repositorio publico de familia portfolio_showcase.
-
-This README documents the public scope of the product, its position in the Anclora ecosystem
-and the right exposure limits for an open repository.
+The Anclora branding that appears in the repository is historical and does not indicate an active Anclora product.
 
 ## Technology
+
+The technologies are those of the time of the project and are not updated.
 
 | Area | Detail |
 | --- | --- |
@@ -66,21 +49,12 @@ and the right exposure limits for an open repository.
 
 ## Documentation
 
-- [Documentacion](./docs)
-
-## Brand
-
-- Canonical product: `anclora-playa-viva-uniestate`
-- Family: `portfolio_showcase`
-- Target visibility: `public`
-- Brand asset: `present`
+- [Documentation](./docs)
 
 ---
 
 <div align="center">
 
-### Antonio Ballesteros · Anclora Group
-
-Software, generative AI and automation for traceable digital products.
+Antonio Ballesteros
 
 </div>
